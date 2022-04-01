@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :vehicles
   get 'omniauth_test', to: 'home#display_omniauth'
 
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
     get 'sign_out' => 'devise/sessions#destroy'
   end
 
+  match "/404", to: "errors#not_found_page", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 
   authenticated(:user) do
     root "vehicles#index", as: :authenticated_root
