@@ -7,5 +7,10 @@ class User < ApplicationRecord
    user = User.where(email: auth.info.email).first
    user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email, password: '123456')
    user
- end  
+ end
+ 
+  # Associations
+
+  has_many :vehicles
+ 
 end
