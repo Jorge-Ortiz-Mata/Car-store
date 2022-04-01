@@ -22,7 +22,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles or /vehicles.json
   def create
     @vehicle = current_user.vehicles.new(vehicle_params)
-
+    #byebug
     respond_to do |format|
       if @vehicle.save
         format.html { redirect_to vehicle_url(@vehicle), notice: "Vehicle was successfully created." }
@@ -60,6 +60,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_params
-      params.require(:vehicle).permit(:title, :type_of_vehicle, :description, :price, :company)
+      params.require(:vehicle).permit(:title, :type_of_vehicle, :description, :price, :company, images: [])
     end
 end

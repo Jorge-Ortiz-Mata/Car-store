@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "soy-lore-344518",
+  "private_key_id": "7597b0cc2d67849445c0f4d22643d0cb835549a7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTM/Q3I7go9G3v\n3KdOmcGvjzC38AXLoFcr4yWOnXQ7RoS5c8l43kBad0Df8lPXuCjPjiyQEVSUkvCy\nfDfKF5Ge0lFK4iz2ffe9zw6i4neoBSF71y4q8CphLphgwwPAvJdcaUp8tTXT1XXG\nsZnVbDTMLSaHcZl7Y8mgHZdYM677Fg8X+DYFnJgMQ/+Wqj4HZy2NX1JFn8AFTgdr\npBmcFNZWVuYatgRpGmnR1w+cYYbal64lZujGLbfXqTMe27dY5D2GxJPGo88y3uvj\n95BHkRKI+klKNSrTOR5mG+iwGCM/dP+u6MAa40iwmvB2H62FBVvluTxIgpzoJCJ+\n+lQ/GxVVAgMBAAECggEAIDsAbnBKOuFmDt5b3ahp0bRDAQszYaXuYEQgbY0JLY9f\nsTFqfCYBpi01TbOD6xg+C1AAbtz0jYFs5U+wcXXeow0+0mwaVzA2pd8nv79hXq8c\n6T4wtCMYzGWE5K7ea/1/ELNXJV4R9ptm6cXqPmIuX0RFiuNzLSKou3+vKxdJ6VzS\nfahqueScB1m+lXRkiZVthEHKAGuYxaEWqlPSpkEV1HBLrrpNfudWRksqcnwbIVlA\nefzthZ7Wsg0t8SyRdlH4fJndJAiU01t+MfNjYI2wR5PphkIG2gimas4Alw/YER3B\n3nDpkdV5yu9y8IcdVDXNyi2AW8mEBeFMclvPTpItIwKBgQDL5Qxq7yUt0udIs8tl\nYeVh+4mj47lomv505h955gUgcRss2us6X4qPoGGq8Kxu4FFcOwHHehml20GNmNCw\nZy+ec7eMf4IFXaQe8RNtt9Q94xvNoSHoCD+IYJxVpjqhTvXwaxcPZXMs3mQ4ReWZ\n306yD08gWVEaFIA107JGhDihpwKBgQC40hXYVm1RlldWMml+HbmLYr+ig8235pbS\nSNEGiqI/5iQS98VcnCQjWF6SNuWU58tQXj42D/6e2vKRxubF6wjShAlUxzQvL1zC\nPJaPMT6884G/Q23RCGh7gvP8Bx54jBXItjTUMFSPmP7WO2BIzkVr/ozRHaAJDObv\nl5J9UIeYowKBgAqNkFb4ibQVdmMM6zoUFws7OaSB5NbFLuZeAsMMZLeJIx7vNb2P\ntFw6sNNoIYSbl5puc2kfqLQs5PevMR3wOUa6NoXPE6uzbQss7xR+rz2Ew6ug62BX\nDPLCDVVhhSdULuaCpG7nkU6BNC61b2zHYgtVP4MtHEV9SiV/D3sW3NeBAoGAQvro\nLdIMpj/NAREeCDWvk6NC/hu0R0yLJkR7dFpzuKKoOjOPVCPGOQUCqQy6IT/sAAFX\nnHIpfdqthEVIRzwJo3l0hEP5VoxcmowoqFZZfVLml7FRMCtS6kgoMhNGaLuj/WyD\nMs8dJjl1SaCVIW2X3S6QTAznfcAuRXByB3ZS3e8CgYAmAUN/RXAccvbXKzyja23/\n/bkacd4PtswMsJ4qUHY2SvDtHSxNy9Ku69muu9TW4fZjkf1R86HEpEeAp4ChMSZx\nKKaCZHr4j8MYhRuSqdfaLBC9jAGBmAcY5oyihRTugNSE64HF8Y3q35yVBULKzZ/0\n9+175PVNS48e/Mz4HvG8sw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "car-store-rails-6@soy-lore-344518.iam.gserviceaccount.com",
+  "client_id": "100036234648362418658",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/car-store-rails-6%40soy-lore-344518.iam.gserviceaccount.com"
+}
