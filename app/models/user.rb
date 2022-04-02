@@ -11,7 +11,7 @@ class User < ApplicationRecord
  
   # Associations
 
-  has_one :profile
-  has_many :vehicles
+  has_one :profile, dependent: :destroy
+  has_many :vehicles, dependent: :destroy
  
 end

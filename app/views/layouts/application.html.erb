@@ -16,15 +16,24 @@
                 <li>
                     <%= link_to "Car store", root_path %>
                 </li>
-                <li>
-                <%= link_to "Sign up", new_user_registration_path if !current_user %>
-                </li> 
-                <li>
-                <%= link_to "Sign in", new_user_session_path if !current_user %>
-                </li>
-                <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
-                </li>
+                <% if !current_user %>
+                    <li>
+                    <%= link_to "Sign up", new_user_registration_path if !current_user %>
+                    </li> 
+                    <li>
+                    <%= link_to "Sign in", new_user_session_path if !current_user %>
+                    </li>
+                <% else %>
+                    <li>
+                        <%= link_to "#{current_user.profile.first_name} #{current_user.profile.last_name}", profile_path(current_user.profile) %>
+                    </li>
+                    <li>
+                        <%= link_to "#{current_user.email}", edit_user_registration_path %>
+                    </li>
+                    <li>
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
+                    </li>
+                <% end %>
             </ul>
         </header>
     <p class="notice"><%= notice %></p>
