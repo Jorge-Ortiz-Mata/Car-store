@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+
+  before_action :user_has_profile?
   before_action :set_vehicle, only: %i[ show edit update destroy ]
 
   # GET /vehicles or /vehicles.json

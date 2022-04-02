@@ -11,6 +11,7 @@ class User < ApplicationRecord
  
   # Associations
 
+  has_one :profile
   has_many :vehicles
  
 end

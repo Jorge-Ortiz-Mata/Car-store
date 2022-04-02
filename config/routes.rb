@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :profiles
   resources :vehicles
   get 'omniauth_test', to: 'home#display_omniauth'
 
