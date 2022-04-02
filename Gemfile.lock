@@ -98,6 +98,8 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.1)
     ffi (1.15.5-x64-mingw32)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     google-apis-core (0.4.2)
@@ -322,6 +324,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   faker
+  friendly_id
   google-cloud-storage
   image_processing (>= 1.2)
   jbuilder (~> 2.7)
