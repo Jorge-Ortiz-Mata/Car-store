@@ -1,24 +1,38 @@
-# README
+# Car Store.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app consists that many users can sell and buy cars from others users.
+A user can sell their own cars by adding some information and characteristics, 
+such as company, car type, description, photos, prices and more.
 
-Things you may want to cover:
+This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
-* Ruby version
+## Features.
 
-* System dependencies
+* Users can sign up using their **Google**, **Facebook** and **Github** accounts.
+* The app uses **Google Cloud Storage** in order to store files and photos.
+* Was built using **Bootsrtap** as a CSS framework.
+* In order to run the app, you can use the git command: `git clone URL` (Rails 6v).
+* If a user look up for an unknown page, another page will be displayed.
+* Each model has **associations** as well as **validations**
 
-* Configuration
+## Gems.
 
-* Database creation
+* gem 'devise'
 
-* Database initialization
+* gem 'pg'
 
-* How to run the test suite
+* gem 'omniauth'
+* gem 'omniauth-facebook'
+* gem 'omniauth-github'
+* gem 'omniauth-google-oauth2'
+* gem 'omniauth-rails_csrf_protection'
 
-* Services (job queues, cache servers, search engines, etc.)
+* gem 'google-cloud-storage'
 
-* Deployment instructions
+* gem "image_processing", ">= 1.2"
+* gem 'faker'
+* gem 'friendly_id'
 
-* ...
+## Production link.
+
+URL Website application: https://yorch-car-store.herokuapp.com
