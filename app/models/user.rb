@@ -9,7 +9,7 @@ class User < ApplicationRecord
    user
  end
  
-  # Associations
+  # ----------------------------------- ASSOCIATIONS -------------------------------
 
   has_one :profile, dependent: :destroy
   has_many :vehicles, dependent: :destroy

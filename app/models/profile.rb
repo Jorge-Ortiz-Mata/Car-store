@@ -1,7 +1,5 @@
 class Profile < ApplicationRecord
 
-    # Associations.
-
 # ----------------------------------- ASSOCIATIONS -------------------------------
 
     belongs_to :user
