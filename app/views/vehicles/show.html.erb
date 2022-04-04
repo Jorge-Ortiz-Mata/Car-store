@@ -50,5 +50,7 @@
     </p>
 <% end %>
 
+<%= button_to "Delete video and video_thumbnail",  vehicle_delete_media_path(@vehicle), method: :delete %>
+
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', root_path %>

@@ -1,7 +1,7 @@
 class VehiclesController < ApplicationController
 
   before_action :user_has_profile?
-  before_action :set_vehicle, only: %i[ show edit update destroy ]
+  before_action :set_vehicle, only: %i[ show edit update destroy delete_video ]
 
   def index
     @vehicles = Vehicle.all
@@ -44,6 +44,10 @@ class VehiclesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to vehicles_url, notice: "Vehicle was successfully destroyed." }
     end
+  end
+
+  def delete_video
+    redirect_to @vehicle, notice: "Video and Video Thimbnail were deleted: #{@vehicle}"
   end
 
   private

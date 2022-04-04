@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   resources :profiles
-  resources :vehicles
+  resources :vehicles do
+    delete 'delete_media', to: 'vehicles#delete_video'
+  end
+
   get 'omniauth_test', to: 'home#display_omniauth'
 
   devise_for :users, controllers: {
