@@ -1,27 +1,54 @@
 <p>
-  <strong>Title:</strong>
-  <%= @vehicle.title %>
+    <strong>Title:</strong>
+    <%= @vehicle.title %>
+</p>
+
+<% if @vehicle.images.attached? %>
+    <p>
+        <strong>Images:</strong> <br>
+        <% @vehicle.images.each do |image| %>
+        <img src="<%= rails_blob_url(image) %>" alt="image" width="30%">
+        <% end %>
+    </p>
+<% end %>
+
+<p>
+    <strong>Type:</strong>
+    <%= @vehicle.type_of_vehicle %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @vehicle.type_of_vehicle %>
+    <strong>Description:</strong>
+    <%= @vehicle.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @vehicle.description %>
+    <strong>Price:</strong>
+    <%= @vehicle.price %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @vehicle.price %>
+    <strong>Company:</strong>
+    <%= @vehicle.company %>
 </p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @vehicle.company %>
-</p>
+<% if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
+    <p>
+        <strong>Video</strong> <br>
+        <% if @vehicle.video.attached? %>
+            <% if @vehicle.video.attached? && !@vehicle.video_thumbnail.attached? %>
+                <video controls="true" width="20%" preload="metadata">
+            <% elsif @vehicle.video.attached? && @vehicle.video_thumbnail.attached? %>
+                <video controls="true" poster="<%= url_for @vehicle.video_thumbnail %>" width="20%" preload="metadata">
+            <% end %>
+            <source src="<%= rails_blob_url(@vehicle.video) %>" type="<%= @vehicle.video.content_type %>" >
+            </video>
+        <% end %>
+        <% if @vehicle.video_thumbnail.attached? && !@vehicle.video.attached? %>
+            You won't be able to see the video thumbail image unless you upload a video.
+        <% end %>
+    </p>
+<% end %>
 
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', root_path %>

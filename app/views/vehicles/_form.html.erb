@@ -15,6 +15,35 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <% if vehicle.video.attached? %>
+    <div class="field">
+      <%= form.label :video %>
+      <%= form.file_field :video, value: vehicle.video %>
+    </div>  
+  <% else %>
+    <div class="field">
+      <%= form.label :video %>
+      <%= form.file_field :video %>
+    </div>  
+  <% end %>
+
+  <% if vehicle.video_thumbnail.attached? %>
+    <div class="field">
+      <%= form.label :video_thumbnail %>
+      <%= form.file_field :video_thumbnail, value: vehicle.video_thumbnail %>
+    </div> 
+  <% else %>
+    <div class="field">
+      <%= form.label :video_thumbnail %>
+      <%= form.file_field :video_thumbnail %>
+    </div>  
+  <% end %>
 
   <div class="field">
     <%= form.label :type_of_vehicle %>
@@ -36,12 +65,8 @@
     <%= form.text_field :company %>
   </div>
 
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

@@ -4,6 +4,8 @@ class Vehicle < ApplicationRecord
 
     has_rich_text :description
     has_many_attached :images, dependent: :destroy
+    has_one_attached :video, dependent: :destroy
+    has_one_attached :video_thumbnail, dependent: :destroy
     belongs_to :user
 
 # ----------------------------------- VALIDATIONS -------------------------------
@@ -14,7 +16,9 @@ class Vehicle < ApplicationRecord
     validates :price, presence: true
     validates :company, presence: true
     validates :user_id, presence: true
-    validates :images, content_type: { in: 'image/png', in: 'image/jpeg', message: ': The format allowed is either PNG or JPEG.' }
+    validates :images, content_type: [:png, :jpg, :jpeg] 
+    validates :video, content_type: { in: 'video/mp4', message: 'is not a mp4 format.' }, size: { less_than: 100.megabytes, message: 'is too large (100 MB Maximum).' }
+    validates :video_thumbnail, content_type: { in: 'image/png', in: 'image/jpeg', message: ': The format allowed is either PNG or JPEG.' }
 
 # ----------------------------------- FRIENDLY GEM -------------------------------
 
