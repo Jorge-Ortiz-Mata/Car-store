@@ -14,6 +14,7 @@ class Vehicle < ApplicationRecord
     validates :price, presence: true
     validates :company, presence: true
     validates :user_id, presence: true
+    validates :images, content_type: { in: 'image/png', in: 'image/jpeg', message: ': The format allowed is either PNG or JPEG.' }
 
 # ----------------------------------- FRIENDLY GEM -------------------------------
 

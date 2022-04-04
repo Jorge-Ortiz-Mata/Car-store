@@ -21,10 +21,14 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
 * gem 'pg'
 
+* gem 'rails-erd'
+
+* gem 'active_storage_validations'
+
 * gem 'omniauth'
+* gem 'omniauth-google-oauth2'
 * gem 'omniauth-facebook'
 * gem 'omniauth-github'
-* gem 'omniauth-google-oauth2'
 * gem 'omniauth-rails_csrf_protection'
 
 * gem 'google-cloud-storage'
