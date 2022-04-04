@@ -25,6 +25,8 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
 * gem 'active_storage_validations'
 
+* gem 'image_processing'
+
 * gem 'omniauth'
 * gem 'omniauth-google-oauth2'
 * gem 'omniauth-facebook'

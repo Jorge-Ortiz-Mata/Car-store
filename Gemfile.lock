@@ -335,7 +335,7 @@ DEPENDENCIES
   faker
   friendly_id
   google-cloud-storage
-  image_processing (>= 1.2)
+  image_processing
   jbuilder (~> 2.7)
   omniauth
   omniauth-facebook

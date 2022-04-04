@@ -63,7 +63,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
-gem "image_processing", ">= 1.2"
+gem "image_processing"
 gem 'google-cloud-storage'
 gem 'faker'
 gem 'friendly_id'
