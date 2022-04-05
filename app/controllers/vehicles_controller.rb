@@ -1,7 +1,7 @@
 class VehiclesController < ApplicationController
 
   before_action :user_has_profile?
-  before_action :set_vehicle, only: %i[ show edit update destroy delete_video ]
+  before_action :set_vehicle, only: %i[ show edit update destroy delete_video_and_video_thumbnail ]
 
   def index
     @vehicles = Vehicle.all
@@ -46,8 +46,9 @@ class VehiclesController < ApplicationController
     end
   end
 
-  def delete_video
-    redirect_to @vehicle, notice: "Video and Video Thimbnail were deleted: #{@vehicle}"
+  def delete_video_and_video_thumbnail
+    Vehicle.look_up_objets(@vehicle)
+    redirect_to vehicle_url(@vehicle), alert: "The video and/or video_thumbnail were deleted."
   end
 
   private

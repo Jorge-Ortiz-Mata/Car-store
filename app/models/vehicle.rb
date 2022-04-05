@@ -25,4 +25,11 @@ class Vehicle < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+# ----------------------------------- SELF FUNCTIONS -------------------------------
+
+    def self.look_up_objets(vehicle)
+        vehicle.video.destroy if vehicle.video.attached?
+        vehicle.video_thumbnail.destroy if vehicle.video_thumbnail.attached?
+    end
+
 end
