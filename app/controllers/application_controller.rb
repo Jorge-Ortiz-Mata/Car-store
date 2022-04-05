@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-
     private
         def user_has_profile?
             if current_user

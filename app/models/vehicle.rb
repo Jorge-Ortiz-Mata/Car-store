@@ -7,6 +7,7 @@ class Vehicle < ApplicationRecord
     has_one_attached :video, dependent: :destroy
     has_one_attached :video_thumbnail, dependent: :destroy
     belongs_to :user
+    has_many :orders
 
 # ----------------------------------- VALIDATIONS -------------------------------
 

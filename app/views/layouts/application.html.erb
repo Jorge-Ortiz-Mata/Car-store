@@ -31,6 +31,9 @@
                         <li>
                             <%= link_to "Account settings", edit_user_registration_path %>
                         </li>
+                        <li>
+                            <%= link_to "My cart", profile_my_cart_path(current_user.profile) %>
+                        </li>
                     <% end %>
                     <li>
                     <%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
