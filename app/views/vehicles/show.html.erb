@@ -1,3 +1,4 @@
+
 <p>
     <strong>Title:</strong>
     <%= @vehicle.title %>
@@ -51,6 +52,6 @@
 <% end %>
 
 <%= button_to "Delete video and video_thumbnail",  delete_media_path(id: @vehicle.id), method: :delete if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
-
+<%= button_to "Add to my cart", add_to_cart_path(user_id: current_user.id, vehicle_id: @vehicle.id), method: :post %>
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', root_path %>

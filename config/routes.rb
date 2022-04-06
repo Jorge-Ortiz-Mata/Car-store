@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+    post 'add_to_cart', to: 'orders#add_to_cart'
     resources :profiles do
         get 'my_cart', to: 'orders#my_cart'
     end
