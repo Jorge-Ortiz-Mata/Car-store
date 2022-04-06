@@ -1,1 +1,23 @@
-<h1>My cart.</h1>
+<h1>My cart.</h1> <br>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Vehicle</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.user.profile.first_name %> <%= order.user.profile.last_name %></td>
+        <td><%= order.vehicle.title %></td>
+        <td><%= order.vehicle.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

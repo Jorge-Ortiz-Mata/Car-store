@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     before_action :set_profile_and_vehicle, only: [:add_to_cart]
 
     def my_cart
-        @orders = current_user.orders
+        @orders = Order.user_orders(current_user.id)
     end
 
     def add_to_cart
