@@ -1,5 +1,6 @@
 <h1>My cart.</h1> <br>
 
+<% if !@orders.blank? %>
 <table>
   <thead>
     <tr>
@@ -21,3 +22,9 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<p>
+  You don't have any products in your cart. <br>
+  Add produts to your car in order to see more options.
+</p>
+<% end %>
