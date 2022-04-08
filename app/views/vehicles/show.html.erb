@@ -1,7 +1,15 @@
-
+<p>
+    <strong>ID number:</strong>
+    <%= @vehicle.id %>
+</p>
 <p>
     <strong>Title:</strong>
     <%= @vehicle.title %>
+</p>
+
+<p>
+    <strong>Seller:</strong>
+    <%= @vehicle.user.email %>
 </p>
 
 <% if @vehicle.images.attached? %>
@@ -58,9 +66,15 @@
 
 <section>
     <h2>Comments</h2>
-    <div>
-        Here goes all the vehicle's comments.
-    </div>
+    <% if @vehicle.comments %>
+        <% @vehicle.comments.each do |comment| %>
+            <%= render comment %>
+        <% end %>
+    <% else %>
+        <div>
+            Here goes all the vehicle's comments.
+        </div>
+    <% end %>
 </section>
 
 <section>

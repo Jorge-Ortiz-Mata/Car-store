@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
+    before_action :set_vehicle, only: [:create, :destroy]
+
     def create
-        @vehicle = Vehicle.friendly.find(params[:vehicle_id])
         @comment = @vehicle.comments.build(comment_params)
         @comment.user_id = current_user.id
         @comment.save
@@ -9,12 +10,18 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+        @comment = @vehicle.comments.find(params[:id])
+        @comment.destroy
+        redirect_to vehicle_path(@vehicle), alert: "Comment deleted."
     end
 
     private
 
-    def comment_params
-        params.require(:comment).permit(:body)
-    end
+        def comment_params
+            params.require(:comment).permit(:body)
+        end
 
+        def set_vehicle
+            @vehicle = Vehicle.friendly.find(params[:vehicle_id])
+        end
 end
