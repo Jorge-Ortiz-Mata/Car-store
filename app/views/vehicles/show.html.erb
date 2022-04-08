@@ -55,3 +55,17 @@
 <%= button_to "Add to my cart", add_to_cart_path(user_id: current_user.id, vehicle_id: @vehicle.id), method: :post %>
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', root_path %>
+
+<section>
+    <h2>Comments</h2>
+    <div>
+        Here goes all the vehicle's comments.
+    </div>
+</section>
+
+<section>
+    <h2>Add a comment.</h2>
+    <div>
+        <%= render 'comments/form', comment: @comment %>
+    </div>
+</section>

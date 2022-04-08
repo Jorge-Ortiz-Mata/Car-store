@@ -1,0 +1,9 @@
+<%= form_with model: [@vehicle, Comment.new] do |f| %>
+    <div>
+        <%= f.label 'New comment' %>
+        <%= f.text_field :body %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

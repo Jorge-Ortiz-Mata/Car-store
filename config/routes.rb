@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :profiles do
         get 'my_cart', to: 'orders#my_cart'
     end
-    resources :vehicles
+
+    resources :vehicles do
+        resources :comments, except: [:index, :show]
+    end
         
     delete 'delete_media', to: 'vehicles#delete_video_and_video_thumbnail'
 
