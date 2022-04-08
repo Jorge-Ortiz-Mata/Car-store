@@ -13,9 +13,21 @@ class OrdersController < ApplicationController
     end
 
     def buy_product
+        @order = Order.find(params[:order])
+        
+        if @order.user.profile.money >= @order.vehicle.price
+            Order.buy_product(@order)
+            redirect_to profile_my_cart_path(current_user.profile), notice: "You have successfull purchased this vehicle."
+        else
+            redirect_to profile_my_cart_path(current_user.profile), notice: "Sorry, you don't have enough money in order to make this purchase."
+        end
+
     end
 
     def remove_product
+        @order = Order.find(params[:order])
+        @order.destroy
+        redirect_to profile_my_cart_path(current_user.profile), notice: "The order was deleted from your cart."
     end
 
     private

@@ -1,25 +1,29 @@
-<h1>My cart.</h1> <br>
-
-<% if !@orders.blank? %>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>User</th>
-      <th>Vehicle</th>
-      <th>Description</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-      <%= render order %>
-    <% end %>
-  </tbody>
-</table>
-<% else %>
+<h1>My cart.</h1>
 <p>
-  You don't have any products in your cart. <br>
-  Add produts to your car in order to see more options.
+    Your money: $<%= current_user.profile.money.round(2) %>USD
 </p>
+<br>
+<% if !@orders.blank? %>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Vehicle</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @orders.each do |order| %>
+            <%= render order %>
+        <% end %>
+        </tbody>
+    </table>
+    <% else %>
+    <p>
+        You don't have any products in your cart. <br>
+        Add produts to your car in order to see more options.
+    </p>
 <% end %>

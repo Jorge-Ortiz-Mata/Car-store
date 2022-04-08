@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
     resources :youtube, only: :show
 
+    post 'buy_product', to: 'orders#buy_product'
+    delete 'remove_product', to: 'orders#remove_product'
     post 'add_to_cart', to: 'orders#add_to_cart'
+
     resources :profiles do
         get 'my_cart', to: 'orders#my_cart'
     end

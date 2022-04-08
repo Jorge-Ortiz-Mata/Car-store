@@ -3,8 +3,9 @@
     <td><%= order.user.profile.first_name %> <%= order.user.profile.last_name %></td>
     <td><%= order.vehicle.title %></td>
     <td><%= order.vehicle.description %></td>
+    <td><%= order.vehicle.price %></td>
     <td>
-        <%= button_to "Buy now", '#', method: :post %>
-        <%= button_to "Remove", '#', method: :delete %>
+        <%= button_to "Buy now", buy_product_path(order: order.id), method: :post, data: { confirm: 'Are you sure you want to buy this product? Click "Yes" to accept.' }%>
+        <%= button_to "Remove", remove_product_path(order: order.id), method: :delete, data: { confirm: 'Are you sure you want to remove this product from your cart? Click "Yes" to accept.' } %>
     </td>
 </tr>
