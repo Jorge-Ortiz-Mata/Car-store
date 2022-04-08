@@ -1,4 +1,14 @@
 class Comment < ApplicationRecord
-  belongs_to :user
-  belongs_to :vehicle
+
+    # ----------------------------------- ASSOCIATIONS -------------------------------
+
+    belongs_to :user
+    belongs_to :vehicle
+
+    # ----------------------------------- VALIDATIONS -------------------------------
+
+    validates :body, presence: true
+    validates :user_id, presence: true
+    validates :vehicle_id, presence: true
+
 end
