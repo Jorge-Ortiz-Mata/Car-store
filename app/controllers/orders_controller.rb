@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
     before_action :user_has_profile?
     before_action :set_profile_and_vehicle, only: [:add_to_cart]
+    before_action :set_order, only: [:buy_product, :remove_product]
 
     def my_cart
         @orders = Order.user_orders(current_user.id)
@@ -13,8 +14,6 @@ class OrdersController < ApplicationController
     end
 
     def buy_product
-        @order = Order.find(params[:order])
-        
         if @order.user.profile.money >= @order.vehicle.price
             Order.buy_product(@order)
             redirect_to profile_my_cart_path(current_user.profile), notice: "You have successfull purchased this vehicle."
@@ -25,7 +24,6 @@ class OrdersController < ApplicationController
     end
 
     def remove_product
-        @order = Order.find(params[:order])
         @order.destroy
         redirect_to profile_my_cart_path(current_user.profile), notice: "The order was deleted from your cart."
     end
@@ -35,5 +33,9 @@ class OrdersController < ApplicationController
         def set_profile_and_vehicle
             @vehicle = Vehicle.friendly.find(params[:vehicle_id])
             @user = User.find(params[:user_id])
+        end
+
+        def set_order
+            @order = Order.find(params[:order])
         end
 end

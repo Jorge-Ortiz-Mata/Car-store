@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+    resources :posts
     resources :youtube, only: :show
 
     post 'buy_product', to: 'orders#buy_product'

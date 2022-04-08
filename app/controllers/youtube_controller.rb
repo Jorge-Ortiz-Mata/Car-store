@@ -1,4 +1,5 @@
 class YoutubeController < ApplicationController
+  
     def show
       @youtube = Youtube.new(id: params[:id])
       render json: {

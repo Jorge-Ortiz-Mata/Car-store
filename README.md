@@ -9,8 +9,12 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 ## Features.
 
 * Users can sign up using their **Google**, **Facebook** and **Github** accounts.
+* Users can add vehicles to the store.
+* Users can buy and remove products from their carts.
+* Vehicles products could have images and videos as their presentation.
+* Users can create posts and add **Youtube** videos embedded.
 * The app uses **Google Cloud Storage** in order to store files and photos.
-* Was built using **Bootsrtap** as a CSS framework.
+* Was built using **Bootstrap** as the CSS framework for this application.
 * In order to run the app, you can use the git command: `git clone URL` (Rails 6v).
 * If a user look up for an unknown page, another page will be displayed.
 * Each model has **associations** as well as **validations**
@@ -26,6 +30,8 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * gem 'active_storage_validations'
 
 * gem 'image_processing'
+
+* gem 'hirb'
 
 * gem 'omniauth'
 * gem 'omniauth-google-oauth2'

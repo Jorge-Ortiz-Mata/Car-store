@@ -16,5 +16,6 @@ class User < ApplicationRecord
     has_many :vehicles, dependent: :destroy
     has_many :orders
     has_many :comments
+    has_many :posts
  
 end
