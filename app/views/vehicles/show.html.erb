@@ -66,6 +66,9 @@
 
 <section>
     <h2>Comments</h2>
+    <p>
+        <%= @vehicle.comments.count %>
+    </p>
     <% if @vehicle.comments %>
         <% @vehicle.comments.each do |comment| %>
             <%= render comment %>

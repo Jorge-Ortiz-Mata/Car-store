@@ -8,17 +8,12 @@
       <th>User</th>
       <th>Vehicle</th>
       <th>Description</th>
+      <th>Action</th>
     </tr>
   </thead>
-
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.id %></td>
-        <td><%= order.user.profile.first_name %> <%= order.user.profile.last_name %></td>
-        <td><%= order.vehicle.title %></td>
-        <td><%= order.vehicle.description %></td>
-      </tr>
+      <%= render order %>
     <% end %>
   </tbody>
 </table>
