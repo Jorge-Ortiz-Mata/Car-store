@@ -32,10 +32,7 @@
                             <%= link_to "New post", new_post_path %>
                         </li>
                         <li>
-                            <%= "@ #{current_user.profile.first_name} #{current_user.profile.last_name}" %>
-                        </li>
-                        <li>
-                            <%= link_to "Profile settings", profile_path(current_user.profile) %>
+                            <%= link_to "#{current_user.email}", profile_path(current_user.profile) %>
                         </li>
                         <li>
                             <%= link_to "Account settings", edit_user_registration_path %>
