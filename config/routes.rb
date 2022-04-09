@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
     devise_for :users, controllers: {
                                         omniauth_callbacks: 'users/omniauth_callbacks',
-                                        sessions: 'users/sessions'
+                                        sessions: 'users/sessions',
+                                        registrations: "users/registrations"
                                     }
     devise_scope :user do
         get 'sign_out' => 'devise/sessions#destroy'
