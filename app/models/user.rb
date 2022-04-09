@@ -14,8 +14,8 @@ class User < ApplicationRecord
 
     has_one :profile, dependent: :destroy
     has_many :vehicles, dependent: :destroy
-    has_many :orders
-    has_many :comments
-    has_many :posts
+    has_many :orders, dependent: :destroy
+    has_many :comments, dependent: :destroy
+    has_many :posts, dependent: :destroy
  
 end
