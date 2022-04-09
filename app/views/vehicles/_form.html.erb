@@ -17,6 +17,11 @@
   </div>
   
   <div class="field">
+    <%= form.label 'Category' %>
+    <%= form.collection_select(:category_ids, Category.all, :id, :name, { prompt: ''} ) %>
+  </div>
+  
+  <div class="field">
     <%= form.label :images %>
     <%= form.file_field :images, multiple: true %>
   </div>
@@ -44,11 +49,6 @@
       <%= form.file_field :video_thumbnail %>
     </div>  
   <% end %>
-
-  <div class="field">
-    <%= form.label :type_of_vehicle %>
-    <%= form.text_field :type_of_vehicle %>
-  </div>
 
   <div class="field">
     <%= form.label :description %>

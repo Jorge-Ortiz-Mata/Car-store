@@ -59,7 +59,7 @@ class VehiclesController < ApplicationController
         end
 
         def vehicle_params
-            params.require(:vehicle).permit(:title, :type_of_vehicle, :description, :price, :company, :video, :video_thumbnail, images: [])
+            params.require(:vehicle).permit(:title, :description, :category_ids, :price, :company, :video, :video_thumbnail, images: [])
         end
 
         def user_belongs

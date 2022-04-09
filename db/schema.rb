@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_225542) do
+ActiveRecord::Schema.define(version: 2022_04_09_231520) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -132,9 +132,17 @@ ActiveRecord::Schema.define(version: 2022_04_09_225542) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  create_table "vehicle_categories", force: :cascade do |t|
+    t.integer "vehicle_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_vehicle_categories_on_category_id"
+    t.index ["vehicle_id"], name: "index_vehicle_categories_on_vehicle_id"
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.string "title"
-    t.string "type_of_vehicle"
     t.text "description"
     t.decimal "price"
     t.string "company"
@@ -154,5 +162,7 @@ ActiveRecord::Schema.define(version: 2022_04_09_225542) do
   add_foreign_key "orders", "vehicles"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "vehicle_categories", "categories"
+  add_foreign_key "vehicle_categories", "vehicles"
   add_foreign_key "vehicles", "users"
 end

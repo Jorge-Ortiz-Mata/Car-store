@@ -9,11 +9,12 @@ class Vehicle < ApplicationRecord
     belongs_to :user
     has_many :orders, dependent: :destroy
     has_many :comments, dependent: :destroy
+    has_many :vehicle_categories, dependent: :destroy
+    has_many :categories, through: :vehicle_categories, dependent: :destroy
 
 # ----------------------------------- VALIDATIONS -------------------------------
 
     validates :title, presence: true
-    validates :type_of_vehicle, presence: true
     validates :description, presence: true
     validates :price, presence: true
     validates :company, presence: true
