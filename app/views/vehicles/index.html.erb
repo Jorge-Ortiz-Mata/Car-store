@@ -1,44 +1,24 @@
 <h1>Vehicles</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>ID Vehicle.</th>
-      <th>Title</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Company</th>
-      <th>Images</th>
-      <th>Seller.</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th>ID Vehicle.</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Company</th>
+            <th>Images</th>
+            <th>Seller.</th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @vehicles.each do |vehicle| %>
-      <tr>
-        <td><%= vehicle.id %></td>
-        <td><%= vehicle.title %></td>
-        <td><%= vehicle.type_of_vehicle %></td>
-        <td><%= vehicle.description %></td>
-        <td><%= vehicle.price %></td>
-        <td><%= vehicle.company %></td>
-        <% if vehicle.images.attached? %>
-          <% vehicle.images.each do |image| %>
-            <td>
-              <p><%= image_tag(image, width: 50) %></p>
-            </td>
-          <% end %>
-        <% else %>
+    <tbody>
+        <% @vehicles.each do |vehicle| %>
+            <%= render vehicle %>
         <% end %>
-        <td><%= vehicle.user.email %></td>
-        <td><%= link_to 'Show', vehicle %> <br>
-        <%= link_to 'Edit', edit_vehicle_path(vehicle) %> <br>
-        <%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    </tbody>
 </table>
 
 <br>

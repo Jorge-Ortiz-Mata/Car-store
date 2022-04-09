@@ -5,7 +5,9 @@
     <small>
         <%= comment.user.email %>
     </small>
-    <p>
-        <%= button_to "Delete comment", [comment.vehicle, comment], method: :delete %>
-    </p>
+    <% if comment.user == current_user %>
+        <p>
+            <%= button_to "Delete comment", [comment.vehicle, comment], method: :delete %>
+        </p>
+    <% end %>
 </div>

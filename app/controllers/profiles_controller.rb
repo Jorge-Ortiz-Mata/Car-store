@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
 
   before_action :user_has_profile?, except: [:new, :create]
   before_action :set_profile, only: %i[ show edit update destroy ]
+  before_action :user_belongs, only: [:edit, :update, :destroy]
 
   def index
     @profiles = Profile.all
@@ -55,5 +56,11 @@ class ProfilesController < ApplicationController
 
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :birth, :location)
+    end
+
+    def user_belongs
+      if @profile.user != current_user
+          redirect_to root_path, notice: "This profile doesn't belong to you."
+      end
     end
 end

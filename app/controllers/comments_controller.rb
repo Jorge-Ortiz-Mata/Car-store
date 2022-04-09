@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+    before_action :user_has_profile?
     before_action :set_vehicle, only: [:create, :destroy]
 
     def create

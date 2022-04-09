@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   before_action :user_has_profile?
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :user_belongs, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -54,5 +55,11 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :body)
+    end
+
+    def user_belongs
+      if @post.user != current_user
+          redirect_to posts_path, notice: "This post doesn't belong to you."
+      end
     end
 end

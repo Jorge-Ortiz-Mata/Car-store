@@ -18,5 +18,5 @@
   <%= @profile.location %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Edit', edit_profile_path(@profile) if @profile.user == current_user %> <br>
 <%= link_to 'Back', root_path %>

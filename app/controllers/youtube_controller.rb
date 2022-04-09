@@ -1,4 +1,6 @@
 class YoutubeController < ApplicationController
+
+  before_action :user_has_profile?
   
     def show
       @youtube = Youtube.new(id: params[:id])

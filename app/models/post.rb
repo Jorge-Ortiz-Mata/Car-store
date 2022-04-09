@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
     # ----------------------------------- VALIDATIONS -------------------------------
 
-    validates :title, presence: true
+    validates :title, presence: true, uniqueness: true
     validates :body, presence: true, length: { minimum: 50 }
     validates :user_id, presence: true
 

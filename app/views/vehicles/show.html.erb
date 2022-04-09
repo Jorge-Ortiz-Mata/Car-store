@@ -16,7 +16,7 @@
     <p>
         <strong>Images:</strong> <br>
         <% @vehicle.images.each do |image| %>
-        <img src="<%= rails_blob_url(image) %>" alt="image" width="30%">
+        <img src="<%= rails_blob_url(image) %>" alt="image" width="20%">
         <% end %>
     </p>
 <% end %>
@@ -61,14 +61,14 @@
 
 <%= button_to "Delete video and video_thumbnail",  delete_media_path(id: @vehicle.id), method: :delete if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
 <%= button_to "Add to my cart", add_to_cart_path(user_id: current_user.id, vehicle_id: @vehicle.id), method: :post %>
-<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', root_path %>
-
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) if @vehicle.user == current_user %>
+<%= link_to 'Destroy', @vehicle, method: :delete, data: { confirm: 'Are you sure?' } if @vehicle.user == current_user %> <br>
+<%= link_to 'Back', root_path %> <br>
+<br>
 <section>
-    <h2>Comments</h2>
-    <p>
-        <%= @vehicle.comments.count %>
-    </p>
+    <span>
+        Comments <%= @vehicle.comments.count %>
+    </span>
     <% if @vehicle.comments %>
         <% @vehicle.comments.each do |comment| %>
             <%= render comment %>
