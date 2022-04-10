@@ -5,7 +5,12 @@ class VehiclesController < ApplicationController
     before_action :user_belongs, only: [:edit, :update, :destroy]
 
     def index
-        @vehicles = Vehicle.all
+        @q = Vehicle.ransack(params[:q])
+        if !params[:q].blank?
+            @vehicles = @q.result.includes(:user, :categories)
+        else 
+            @vehicles = Vehicle.all.limit(10)
+        end
     end
 
     def show

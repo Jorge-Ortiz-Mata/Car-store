@@ -71,3 +71,4 @@ gem 'omniauth-github'
 gem 'active_storage_validations'
 gem 'hirb', '~> 0.7.3'
 gem "recaptcha"
+gem 'ransack'

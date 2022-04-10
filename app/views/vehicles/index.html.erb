@@ -1,16 +1,32 @@
-<h1>Vehicles</h1>
+<%= render 'search/form' %>
 
+<h1>Vehicles</h1>
+<%= "Vehicles: #{@vehicles.count}" if !params[:q].blank? %>
 <table>
     <thead>
-        <tr>
-            <th>ID Vehicle.</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Company</th>
-            <th>Images</th>
-            <th>Seller.</th>
-        </tr>
+        <% if params[:q].blank? %>
+            <tr>
+                <th>ID Vehicle.</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Company</th>
+                <th>Images</th>
+                <th>Seller.</th>
+            </tr>
+        <% else %>
+            <tr>
+                <th><%= sort_link(@q, :id, 'ID') %></th>
+                <th><%= sort_link(@q, :title, 'Name') %></th>
+                <th><%= sort_link(@q, :category, 'Category') %></th>
+                <th>Description</th>
+                <th><%= sort_link(@q, :price, 'Price') %></th>
+                <th><%= sort_link(@q, :company, 'Company') %></th>
+                <th>Images</th>
+                <th>Seller</th>
+            </tr>
+        <% end %>
     </thead>
 
     <tbody>

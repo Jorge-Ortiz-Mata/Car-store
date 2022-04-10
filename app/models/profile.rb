@@ -1,5 +1,9 @@
 class Profile < ApplicationRecord
 
+# ----------------------------------- VARIABLES -------------------------------
+
+COUNTRIES = ['', 'México', 'United States', 'Brazil', 'Canada', 'Argentina', 'Chile']
+
 # ----------------------------------- ASSOCIATIONS -------------------------------
 
     belongs_to :user
@@ -12,6 +16,13 @@ class Profile < ApplicationRecord
     validates :birth, presence: true
     validates :location, presence: true
     validates :user_id, presence: true
+
+# ----------------------------------- FUNCTIONS -------------------------------
+
+def self.countries
+    COUNTRIES.map {|country| [country, country]}
+end
+
 
 # ----------------------------------- FRIENDLY GEM -------------------------------
 

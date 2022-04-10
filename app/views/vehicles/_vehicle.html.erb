@@ -1,6 +1,9 @@
 <tr>
     <td><%= vehicle.id %></td>
     <td><%= link_to "#{vehicle.title}", vehicle %></td>
+    <td>
+        <%= vehicle.categories.first.name %>
+    </td>
     <td><%= vehicle.description %></td>
     <td><%= vehicle.price.round(2) %></td>
     <td><%= vehicle.company %></td>

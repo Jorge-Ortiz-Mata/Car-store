@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.select :location, Profile.countries  %>
   </div>
 
   <div class="actions">
