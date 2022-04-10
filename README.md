@@ -21,17 +21,17 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
 ## Gems.
 
-* gem 'devise'
+* gem 'devise'      **Gem for sign up and sign in functionality.**
 
-* gem 'pg'
+* gem 'pg'      **Gem for PostreSQL database.**
 
-* gem 'rails-erd'
+* gem 'rails-erd'       **Gem for generate PDF realtionship models.**
 
-* gem 'active_storage_validations'
+* gem 'active_storage_validations'      **Gem for active storage validations.**
 
-* gem 'image_processing'
+* gem 'image_processing'        **Gem for display images.**
 
-* gem 'hirb'
+* gem 'hirb'        **Gem for show databases as tables.**
 
 * gem 'omniauth'
 * gem 'omniauth-google-oauth2'
@@ -39,11 +39,13 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * gem 'omniauth-github'
 * gem 'omniauth-rails_csrf_protection'
 
-* gem 'google-cloud-storage'
+* gem 'google-cloud-storage'        **Gem for storing data in Google Cloud.**
 
-* gem "image_processing", ">= 1.2"
-* gem 'faker'
-* gem 'friendly_id'
+* gem 'faker'       **Gem for generate fake data.**
+* gem 'friendly_id'     **Gem for make URL friendly.**
+
+* gem "recaptcha"       **Gem for add recaptcha.**
+* gem 'ransack'     **Gem for search and filter data.**
 
 ## Production link.
 
