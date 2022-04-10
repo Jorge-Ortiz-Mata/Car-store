@@ -21,31 +21,22 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
 ## Gems.
 
-* gem 'devise'      **Gem for sign up and sign in functionality.**
-
-* gem 'pg'      **Gem for PostreSQL database.**
-
-* gem 'rails-erd'       **Gem for generate PDF realtionship models.**
-
-* gem 'active_storage_validations'      **Gem for active storage validations.**
-
-* gem 'image_processing'        **Gem for display images.**
-
-* gem 'hirb'        **Gem for show databases as tables.**
-
-* gem 'omniauth'
-* gem 'omniauth-google-oauth2'
-* gem 'omniauth-facebook'
-* gem 'omniauth-github'
-* gem 'omniauth-rails_csrf_protection'
-
-* gem 'google-cloud-storage'        **Gem for storing data in Google Cloud.**
-
-* gem 'faker'       **Gem for generate fake data.**
-* gem 'friendly_id'     **Gem for make URL friendly.**
-
-* gem "recaptcha"       **Gem for add recaptcha.**
-* gem 'ransack'     **Gem for search and filter data.**
+* gem 'devise'..............................**Gem for sign up and sign in functionality.**
+* gem 'pg'..................................**Gem for PostreSQL database.**
+* gem 'rails-erd'...........................**Gem for generate PDF realtionship models.**
+* gem 'active_storage_validations'..........**Gem for active storage validations.**
+* gem 'image_processing'....................**Gem for display images.**
+* gem 'hirb'................................**Gem for show databases as tables.**
+* gem 'omniauth'............................**Gem for adding Omniauth.**
+* gem 'omniauth-google-oauth2'..............**Gem for adding Omniauth using Google.**
+* gem 'omniauth-facebook'...................**Gem for adding Omniauth using Facebook.**
+* gem 'omniauth-github'.....................**Gem for adding Omniauth using Github.**
+* gem 'omniauth-rails_csrf_protection'......**Gem for adding Omniauth protection.**
+* gem 'google-cloud-storage'................**Gem for storing data in Google Cloud.**
+* gem 'faker'...............................**Gem for generate fake data.**
+* gem 'friendly_id'.........................**Gem for make URL friendly.**
+* gem "recaptcha"...........................**Gem for add recaptcha.**
+* gem 'ransack'.............................**Gem for search and filter data.**
 
 ## Production link.
 
