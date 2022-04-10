@@ -6,13 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do
+
+100.times do
     Vehicle.create!([{
         title: Faker::Vehicle.car_type,
-        type_of_vehicle: 'Car',
         description: Faker::Vehicle.standard_specs,
         price: rand(3000.0..10000.00).round(2),
+        category_ids: rand(1..6),
         company: Faker::Vehicle.make,
-        user_id: 2
+        user_id: rand(5..11)
     }])
 end
