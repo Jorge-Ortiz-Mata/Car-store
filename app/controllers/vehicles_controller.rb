@@ -7,9 +7,9 @@ class VehiclesController < ApplicationController
     def index
         @q = Vehicle.ransack(params[:q])
         if !params[:q].blank?
-            @vehicles = @q.result.includes(:user, :categories)
+            @pagy, @vehicles = pagy(@q.result.includes(:user, :categories))
         else 
-            @vehicles = Vehicle.all.limit(10)
+            @pagy, @vehicles = pagy(Vehicle.all)
         end
     end
 

@@ -37,6 +37,7 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * gem 'friendly_id'.........................**Gem for make URL friendly.**
 * gem "recaptcha"...........................**Gem for add recaptcha.**
 * gem 'ransack'.............................**Gem for search and filter data.**
+* gem 'pagy'................................**Gem for add pagination.**
 
 ## Production link.
 
