@@ -38,6 +38,8 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * gem "recaptcha"...........................**Gem for add recaptcha.**
 * gem 'ransack'.............................**Gem for search and filter data.**
 * gem 'pagy'................................**Gem for add pagination.**
+* gem "rolify"..............................**Gem for add roles.**
+* gem "pundit"..............................**Gem for add authorizations.**
 
 ## Production link.
 

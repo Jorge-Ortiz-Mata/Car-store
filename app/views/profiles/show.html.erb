@@ -24,9 +24,10 @@
     <%= @profile.location %>    
 </p>
 
-<% @profile.user.roles.each do |role| %>
-    <%= role.name %>
-<% end %>
+<p>
+    <strong>Positions:</strong>
+    <%= @profile.position.name %>
+</p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) if @profile.user == current_user %> <br>
 <%= link_to 'Back', root_path %>
