@@ -9,6 +9,10 @@ class User < ApplicationRecord
         user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email, password: '123456')
         user
     end
+
+    # ----------------------------------- CALLBACKS. -------------------------------
+
+    after_create :set_role
     
     # ----------------------------------- ASSOCIATIONS -------------------------------
 
@@ -17,5 +21,15 @@ class User < ApplicationRecord
     has_many :orders, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_many :posts, dependent: :destroy
- 
+
+    # ----------------------------------- ROLIFY GEM -------------------------------
+
+    rolify
+
+    # ----------------------------------- METHODS. -------------------------------
+
+    def set_role
+        self.first.add_role(:other)
+    end
+    
 end

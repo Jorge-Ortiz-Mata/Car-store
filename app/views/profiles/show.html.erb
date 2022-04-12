@@ -21,8 +21,12 @@
 
 <p>
     <strong>Location:</strong>
-    <%= @profile.location %>
+    <%= @profile.location %>    
 </p>
+
+<% @profile.user.roles.each do |role| %>
+    <%= role.name %>
+<% end %>
 
 <%= link_to 'Edit', edit_profile_path(@profile) if @profile.user == current_user %> <br>
 <%= link_to 'Back', root_path %>

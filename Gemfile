@@ -73,3 +73,4 @@ gem 'hirb', '~> 0.7.3'
 gem "recaptcha"
 gem 'ransack'
 gem 'pagy'
+gem "rolify"
