@@ -25,7 +25,7 @@
                     <%= link_to "New post", new_post_path %>
                 </li>
                 <li>
-                    <%= link_to "#{current_user.email}", profile_path(current_user.profile) %>
+                    <%= link_to "#{current_user.email} - #{current_user.profile.position.name}", profile_path(current_user.profile) %>
                 </li>
                 <li>
                     <%= link_to "Account settings", edit_user_registration_path %>
