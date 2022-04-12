@@ -10,10 +10,6 @@ class User < ApplicationRecord
         user
     end
 
-    # ----------------------------------- CALLBACKS. -------------------------------
-
-    after_create :set_role
-    
     # ----------------------------------- ASSOCIATIONS -------------------------------
 
     has_one :profile, dependent: :destroy
@@ -27,9 +23,5 @@ class User < ApplicationRecord
     rolify
 
     # ----------------------------------- METHODS. -------------------------------
-
-    def set_role
-        self.add_role(:other)
-    end
     
 end

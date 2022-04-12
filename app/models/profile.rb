@@ -8,6 +8,8 @@ COUNTRIES = ['', 'México', 'United States', 'Brazil', 'Canada', 'Argentina', 'C
 
     belongs_to :user
     has_one_attached :avatar, dependent: :destroy
+    has_many :profile_positions, dependent: :destroy
+    has_many :positions, through: :profile_positions, dependent: :destroy
 
 # ----------------------------------- VALIDATIONS -------------------------------
 
@@ -28,5 +30,14 @@ end
 
     extend FriendlyId
     friendly_id :first_name, use: :slugged
+    
+
+# ----------------------------------- METHODS. -------------------------------
+
+    after_create :set_position
+
+    def set_position
+        self.positions << Position.find(3)
+    end
 
 end

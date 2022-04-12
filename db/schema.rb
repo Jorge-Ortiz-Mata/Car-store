@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_175300) do
+ActiveRecord::Schema.define(version: 2022_04_12_043721) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,12 @@ ActiveRecord::Schema.define(version: 2022_04_11_175300) do
     t.index ["vehicle_id"], name: "index_orders_on_vehicle_id"
   end
 
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -95,6 +101,15 @@ ActiveRecord::Schema.define(version: 2022_04_11_175300) do
     t.string "slug"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "profile_positions", force: :cascade do |t|
+    t.integer "profile_id", null: false
+    t.integer "position_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position_id"], name: "index_profile_positions_on_position_id"
+    t.index ["profile_id"], name: "index_profile_positions_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -180,6 +195,8 @@ ActiveRecord::Schema.define(version: 2022_04_11_175300) do
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "vehicles"
   add_foreign_key "posts", "users"
+  add_foreign_key "profile_positions", "positions"
+  add_foreign_key "profile_positions", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "vehicle_categories", "categories"
   add_foreign_key "vehicle_categories", "vehicles"
