@@ -29,7 +29,7 @@ class User < ApplicationRecord
     # ----------------------------------- METHODS. -------------------------------
 
     def set_role
-        self.first.add_role(:other)
+        self.add_role(:other)
     end
     
 end
