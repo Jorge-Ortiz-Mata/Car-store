@@ -27,6 +27,11 @@
                 <li>
                     <%= link_to "#{current_user.email} - #{current_user.profile.position.name}", profile_path(current_user.profile) %>
                 </li>
+                <% if current_user.profile.position.name.include? 'admin' %>
+                    <li>
+                        <%= link_to "Users", profiles_path %>
+                    </li>
+                <% end %>
                 <li>
                     <%= link_to "Account settings", edit_user_registration_path %>
                 </li>

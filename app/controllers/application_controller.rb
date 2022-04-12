@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
         def user_not_authorized
             flash[:alert] = "You are not authorized to perform this action."
-            redirect_to request.referrer
+            redirect_to root_path
         end
 
         def user_has_profile?

@@ -1,0 +1,24 @@
+<h1>Users</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Date birth</th>
+            <th>Role</th>
+            <th>Action</th>
+            <th>Joined at:</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @profiles.each do |profile| %>
+            <%= render profile %>
+        <% end %>
+    </tbody>
+</table>
+
+ 

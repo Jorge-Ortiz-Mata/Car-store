@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all
+    authorize @profiles
   end
 
   def show

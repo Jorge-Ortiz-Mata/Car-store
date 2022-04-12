@@ -1,0 +1,14 @@
+<tr>
+    <td><%= profile.id %></td>
+    <td><%= profile.first_name %></td>
+    <td><%= profile.last_name %></td>
+    <td><%= profile.user.email %></td>
+    <td><%= profile.location %></td>
+    <td><%= profile.birth %></td>
+    <td><%= profile.position.name %></td>
+    <td>
+        <%= link_to "Show", profile %> <br>
+        <%= link_to "Cancel Account", '#' %>
+    </td>
+    <td><%= time_ago_in_words(profile.created_at) %></td>
+</tr>
