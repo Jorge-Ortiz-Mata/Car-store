@@ -2,8 +2,37 @@
     <%= "#{step.to_s.humanize}" %>
 </h2>
 <p>
+    <h4>Vehicle details.</h4>
+    <p>
+        <strong>Vehicle</strong>: <%= "#{@vehicle.title}" %> <br>
+        <strong>Type</strong>: <%= "#{@vehicle.categories.first.name}" %> <br>
+        <strong>Price</strong>: $<%= "#{@vehicle.price}" %> USD
+    </p>
+</p>
+<p>
     Here goes the bar: <%= ((wizard_steps.index(step).to_d + 1) / wizard_steps.count.to_d) * 100 %>
 </p>
+<%= form_with model: @vehicle, url: vehicle_vehicle_wizard_path, method: :put do |form| %>
+
+    <div class="field">
+        <%= form.label :description %>
+        <%= form.rich_text_area :description %>
+    </div>
+
+    <div class="field">
+        <%= form.label :price %>
+        <%= form.text_field :price %>
+    </div>
+
+    <div class="field">
+        <%= form.label :company %>
+        <%= form.text_field :company %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
 <p>
     <%= link_to 'back', previous_wizard_path %>
     <%= link_to 'finish', next_wizard_path %>
