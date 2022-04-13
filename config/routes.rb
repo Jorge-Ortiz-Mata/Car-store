@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-    resources :vehicle_creator
-
     resources :posts
     resources :youtube, only: :show
 
@@ -15,6 +13,7 @@ Rails.application.routes.draw do
 
     resources :vehicles do
         resources :comments, except: [:index, :show]
+        resources :vehicle_wizard, controller: 'vehicles/vehicle_wizard'
     end
         
     delete 'delete_media', to: 'vehicles#delete_video_and_video_thumbnail'

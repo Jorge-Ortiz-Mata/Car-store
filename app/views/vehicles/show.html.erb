@@ -3,6 +3,11 @@
     <%= @vehicle.id %>
 </p>
 <p>
+    <li>
+        <%= link_to "Vehicle Wizard", vehicle_vehicle_wizard_index_path(@vehicle) %>
+    </li>
+</p>
+<p>
     <strong>Title:</strong>
     <%= @vehicle.title %>
 </p>
