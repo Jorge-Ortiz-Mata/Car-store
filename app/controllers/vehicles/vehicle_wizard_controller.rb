@@ -7,10 +7,12 @@ class Vehicles::VehicleWizardController < ApplicationController
     before_action :vehicle_params, only: [:update]
 
     def show
+        authorize @vehicle, :same_user?
         render_wizard
     end
     
     def update
+        authorize @vehicle, :same_user?
         case step
             when :name_and_files
                 @vehicle.update(vehicle_params)

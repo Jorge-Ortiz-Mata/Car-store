@@ -9,6 +9,11 @@ class VehiclePolicy < ApplicationPolicy
   # @record.user == @user is the same as if we say current_user = @vehicle.user
 
   def new?
-    @user.profile.position.name.include? 'admin'
+    @user.profile.position.name == 'admin' || @user.profile.position.name == 'member'
   end
+
+  def same_user?
+    @record.user == @user
+  end
+
 end

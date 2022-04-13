@@ -7,7 +7,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def new?
-    @user.profile.position.name.include? 'member'
+    @user.profile.position.name == 'admin' || @user.profile.position.name == 'member'
   end
 
 end
