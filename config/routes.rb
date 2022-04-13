@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+    resources :vehicle_creator
+
     resources :posts
     resources :youtube, only: :show
 

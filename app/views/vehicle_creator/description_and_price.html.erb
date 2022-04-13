@@ -1,0 +1,16 @@
+<h2>
+    <%= "#{step.to_s.humanize}" %>
+</h2>
+<p>
+    Here goes the bar: <%= ((wizard_steps.index(step).to_d + 1) / wizard_steps.count.to_d) * 100 %>
+</p>
+<p>
+    <%= link_to 'back', previous_wizard_path %>
+    <%= link_to 'finish', next_wizard_path %>
+</p>
+
+<p>
+    <strong>Name step</strong>: <%= "#{step}" %> <br>
+    <strong>Number of stpes</strong>: <%= "#{wizard_steps}" %> <br>
+    <strong>Step</strong>: <%= "#{wizard_steps.index(step) + 1}" %> of <%= "#{wizard_steps.count}" %>
+</p>

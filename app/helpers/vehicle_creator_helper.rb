@@ -1,0 +1,2 @@
+module VehicleCreatorHelper
+end

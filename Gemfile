@@ -75,3 +75,4 @@ gem 'ransack'
 gem 'pagy'
 gem "rolify"
 gem "pundit"
+gem 'wicked'
