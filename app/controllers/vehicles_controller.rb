@@ -1,8 +1,8 @@
 class VehiclesController < ApplicationController
 
     before_action :user_has_profile?
-    before_action :set_vehicle, only: %i[ show edit update destroy delete_video_and_video_thumbnail ]
-    before_action :user_belongs, only: [:edit, :update, :destroy]
+    before_action :set_vehicle, only: %i[ show destroy delete_video_and_video_thumbnail ]
+    before_action :user_belongs, only: [:destroy]
 
     def index
         @q = Vehicle.ransack(params[:q])
@@ -22,9 +22,6 @@ class VehiclesController < ApplicationController
         authorize @vehicle
     end
 
-    def edit
-    end
-
     def create
         @vehicle = current_user.vehicles.new(vehicle_params)
         respond_to do |format|
@@ -32,16 +29,6 @@ class VehiclesController < ApplicationController
                 format.html { redirect_to vehicle_url(@vehicle), notice: "Vehicle was successfully created." }
             else
                 format.html { render :new, status: :unprocessable_entity }
-            end
-        end
-    end
-
-    def update
-        respond_to do |format|
-            if @vehicle.update(vehicle_params)
-                format.html { redirect_to vehicle_url(@vehicle), notice: "Vehicle was successfully updated." }
-            else
-                format.html { render :edit, status: :unprocessable_entity }
             end
         end
     end

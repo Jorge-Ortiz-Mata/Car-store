@@ -11,7 +11,7 @@ Rails.application.routes.draw do
         get 'my_cart', to: 'orders#my_cart'
     end
 
-    resources :vehicles do
+    resources :vehicles, except: [:update, :edit] do
         resources :comments, except: [:index, :show]
         resources :vehicle_wizard, controller: 'vehicles/vehicle_wizard'
     end
