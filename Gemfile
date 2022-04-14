@@ -77,3 +77,4 @@ gem "rolify"
 gem "pundit"
 gem 'wicked'
 gem 'sitemap_generator'
+gem 'devise_invitable'

@@ -6,6 +6,8 @@ such as company, car type, description, photos, prices and more.
 
 This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
+## Software requirments.
+
 ## Features.
 
 * Users can sign up using their **Google**, **Facebook** and **Github** accounts.
@@ -47,8 +49,7 @@ It created an account, properties and it set some configuration for the sitemaps
 * gem "pundit"..............................**Gem for add authorizations.**
 * gem 'wicked'..............................**Gem for separate forms.**
 * gem 'sitemap_generator'...................**Gem for set sitemaps more secure.**
-
-
+* gem 'devise_invitable'....................**Gem for send invitations through emails.**
 
 ## Production link.
 
