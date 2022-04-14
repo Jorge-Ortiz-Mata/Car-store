@@ -40,7 +40,7 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * gem 'pagy'................................**Gem for add pagination.**
 * gem "rolify"..............................**Gem for add roles.**
 * gem "pundit"..............................**Gem for add authorizations.**
-* gem 'wicked'
+* gem 'wicked'..............................**GEm for separate forms.**
 
 
 ## Production link.
