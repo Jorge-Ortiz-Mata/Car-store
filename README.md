@@ -19,7 +19,7 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * If a user look up for an unknown page, another page will be displayed.
 * Each model has **associations** as well as **validations**
 
-** Google Analytics and Google Search Console.
+## Google Analytics and Google Search Console.
 
 This app was linked to Google Services in order to track all the users that visit this website.
 It created an account, properties and it set some configuration for the sitemaps.
