@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+        PostMailer.new_post(@post).deliver_now
       else
         format.html { render :new, status: :unprocessable_entity }
       end
