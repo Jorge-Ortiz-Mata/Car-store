@@ -1,0 +1,28 @@
+<h2>
+    Post Info.
+</h2>
+
+<p>
+    <strong>Title:</strong> <br>
+    <%= @post.title %>
+</p>
+
+<p>
+    <strong>Description:</strong> <br>
+    <%= @post.body %>
+</p>
+
+<br>
+
+<%= form_with model: @post, url: post_post_wizard_path, method: :put do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Next', next_wizard_path %>

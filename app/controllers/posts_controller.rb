@@ -16,9 +16,6 @@ class PostsController < ApplicationController
     authorize @post
   end
 
-  def edit
-  end
-
   def create
     @post = current_user.posts.new(post_params)
 
@@ -30,17 +27,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
-  def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-      end
-    end
-  end
-
+  
   def destroy
     @post.destroy
 

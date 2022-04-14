@@ -16,7 +16,6 @@ class Vehicles::VehicleWizardController < ApplicationController
         case step
             when :name_and_files
                 @vehicle.update(vehicle_params)
-
             when :description_and_price
                 @vehicle.update(vehicle_params)
         end

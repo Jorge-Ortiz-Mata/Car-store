@@ -10,4 +10,8 @@ class PostPolicy < ApplicationPolicy
     @user.profile.position.name == 'admin' || @user.profile.position.name == 'member'
   end
 
+  def same_user?
+    @record.user == @user
+  end
+
 end

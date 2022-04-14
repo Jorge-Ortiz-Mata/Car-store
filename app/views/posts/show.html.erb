@@ -13,5 +13,5 @@
   <%= @post.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) if @post.user == current_user %> <br>
+<%= link_to 'Edit', post_post_wizard_index_path(@post) if @post.user == current_user %> <br>
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } if @post.user == current_user %>
