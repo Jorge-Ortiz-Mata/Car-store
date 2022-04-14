@@ -13,4 +13,8 @@ SitemapGenerator::Sitemap.create do
     Vehicle.find_each do |vehicle|
         add vehicle_path(vehicle), :lastmod => vehicle.updated_at
     end
+
+    Post.find_each do |post|
+        add post_path(post), :lastmod => post.updated_at
+    end
 end
