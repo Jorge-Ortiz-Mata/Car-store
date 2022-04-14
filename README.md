@@ -45,7 +45,9 @@ It created an account, properties and it set some configuration for the sitemaps
 * gem 'pagy'................................**Gem for add pagination.**
 * gem "rolify"..............................**Gem for add roles.**
 * gem "pundit"..............................**Gem for add authorizations.**
-* gem 'wicked'..............................**GEm for separate forms.**
+* gem 'wicked'..............................**Gem for separate forms.**
+* gem 'sitemap_generator'...................**Gem for set sitemaps more secure.**
+
 
 
 ## Production link.

@@ -76,3 +76,4 @@ gem 'pagy'
 gem "rolify"
 gem "pundit"
 gem 'wicked'
+gem 'sitemap_generator'
