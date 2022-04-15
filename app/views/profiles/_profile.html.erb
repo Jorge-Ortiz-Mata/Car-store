@@ -10,5 +10,10 @@
         <%= link_to "Show", profile %> <br>
         <%= link_to "Cancel Account", '#' %>
     </td>
+    <td>
+        <%= button_to 'Update to admin', '#', method: :patch  if profile.position.name != 'admin' %> <br>
+        <%= button_to 'Update to member', '#', method: :patch if profile.position.name != 'member' %> <br>
+        <%= button_to 'Update to other', '#', method: :patch  if profile.position.name != 'other' %>
+    </td>
     <td><%= time_ago_in_words(profile.created_at) %></td>
 </tr>
