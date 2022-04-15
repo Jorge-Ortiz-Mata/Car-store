@@ -34,6 +34,7 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * Admin role allows to see all users'app and change their roles to admin, member or other, as well as sell vehicles and create posts.
 * Member role allows to sell vehicles and create posts.
 * Other role allows only to see buy products and see vehicles and posts.
+* Recaptcha was implement when users sign up.
 
 ## Google Analytics and Google Search Console.
 
