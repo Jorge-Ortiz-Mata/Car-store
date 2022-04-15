@@ -8,6 +8,13 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 
 ## Software requirments.
 
+* Ruby version: 3.0.3
+* Ruby on Rails version: 6.1.4.7
+* Visual Studio Code.
+* Javascript.
+* HTML.
+* CSS and SCSS. 
+
 ## Features.
 
 * Users can sign up using their **Google**, **Facebook** and **Github** accounts.
@@ -20,6 +27,13 @@ This app was built and design by using Ruby, Ruby on Rails 6, and Bootstrap.
 * In order to run the app, you can use the git command: `git clone URL` (Rails 6v).
 * If a user look up for an unknown page, another page will be displayed.
 * Each model has **associations** as well as **validations**
+* Users can leave **comments** and **reviews** for each vehicle.
+* Users can send **email invitations** to other users.
+* You can reach all the website's data using **Google Analytics**.
+* Use of **Google Search Console** for sitemaps.
+* Admin role allows to see all users'app and change their roles to admin, member or other, as well as sell vehicles and create posts.
+* Member role allows to sell vehicles and create posts.
+* Other role allows only to see buy products and see vehicles and posts.
 
 ## Google Analytics and Google Search Console.
 
