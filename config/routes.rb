@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+    patch 'change_to_admin', to: 'roles#change_to_admin'
+    patch 'change_to_member', to: 'roles#change_to_member'
+    patch 'change_to_other', to: 'roles#change_to_other'
+
     resources :posts do
         resources :post_wizard, controller: 'posts/post_wizard'
     end

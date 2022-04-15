@@ -11,9 +11,13 @@
         <%= link_to "Cancel Account", '#' %>
     </td>
     <td>
-        <%= button_to 'Update to admin', '#', method: :patch  if profile.position.name != 'admin' %> <br>
-        <%= button_to 'Update to member', '#', method: :patch if profile.position.name != 'member' %> <br>
-        <%= button_to 'Update to other', '#', method: :patch  if profile.position.name != 'other' %>
+        <% if profile.position.name != 'admin' %>
+            <%= button_to 'Admin', change_to_admin_path(profile: profile.id, position: profile.position.id), method: :patch  if profile.position.name != 'admin' %> <br>
+            <%= button_to 'Member', change_to_member_path(profile: profile.id, position: profile.position.id), method: :patch if profile.position.name != 'member' %> <br>
+            <%= button_to 'Other', change_to_other_path(profile: profile.id, position: profile.position.id), method: :patch  if profile.position.name != 'other' %>
+        <% else %>
+            <%= "This user is an admin." %>
+        <% end %>
     </td>
     <td><%= time_ago_in_words(profile.created_at) %></td>
 </tr>
