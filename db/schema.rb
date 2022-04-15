@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_14_225933) do
+ActiveRecord::Schema.define(version: 2022_04_15_162324) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -126,6 +126,17 @@ ActiveRecord::Schema.define(version: 2022_04_14_225933) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "body"
+    t.decimal "rating", default: "0.0"
+    t.integer "user_id", null: false
+    t.integer "vehicle_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["vehicle_id"], name: "index_reviews_on_vehicle_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -209,6 +220,8 @@ ActiveRecord::Schema.define(version: 2022_04_14_225933) do
   add_foreign_key "profile_positions", "positions"
   add_foreign_key "profile_positions", "profiles"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "vehicles"
   add_foreign_key "vehicle_categories", "categories"
   add_foreign_key "vehicle_categories", "vehicles"
   add_foreign_key "vehicles", "users"

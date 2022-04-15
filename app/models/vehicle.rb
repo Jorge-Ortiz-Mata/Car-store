@@ -11,6 +11,7 @@ class Vehicle < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :vehicle_categories, dependent: :destroy
     has_many :categories, through: :vehicle_categories, dependent: :destroy
+    has_many :reviews, dependent: :destroy
 
 # ----------------------------------- VALIDATIONS -------------------------------
 

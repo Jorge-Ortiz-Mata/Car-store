@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :vehicles, except: [:update, :edit] do
         resources :comments, except: [:index, :show]
         resources :vehicle_wizard, controller: 'vehicles/vehicle_wizard'
+        resources :reviews, except: [:index, :destroy]
     end
         
     delete 'delete_media', to: 'vehicles#delete_video_and_video_thumbnail'
