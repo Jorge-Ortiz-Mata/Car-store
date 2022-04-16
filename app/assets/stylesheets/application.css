@@ -22,7 +22,7 @@
 
 /* ------------------------------------- HEADER SECTION ----------------------------  */
 
-.header_primary, .header_primary main{
+.header_primary, .header_primary main, footer{
     display: flex;
     flex-direction: column;
 }
@@ -33,27 +33,8 @@
 }
 
 .header_primary{
-    height: 950px;
+    height: 900px;
 }
-
-/* ------------ Delete this sections ------------ */
-
-.header_primary, .header_primary nav ul li{
-    padding: 1px;
-    border: 1px solid #ff0000;
-}
-
-.header_primary nav{
-    padding: 1px;
-    border: 1px solid #0000ff;
-}
-
-.header_primary main{
-    padding: 1px;
-    border: 1px solid #058f12a4;
-}
-
-/* -------------------------------------------- */
 
 /* -------  Nav menu  --------*/
 
@@ -128,7 +109,7 @@ li .sign_in_button{
     top: 0;
     left: 0;
     object-fit: cover;
-    height: 950px;
+    height: 900px;
 }
 
 #see_more_button{
@@ -141,3 +122,15 @@ li .sign_in_button{
 }
 
 /* -----------------------------------------------------------------------------------  */
+/* --------------- FOOTER Section. ------------- */ 
+
+footer{
+    margin-top: 100px;
+    height: 80px;
+    background-color: #000000;
+}
+
+footer p{
+    margin: auto auto auto auto;
+    color: #ffffff;
+}

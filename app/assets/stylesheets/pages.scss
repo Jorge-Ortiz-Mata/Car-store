@@ -1,3 +1,153 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* ------------ Delete this sections ------------ 
+
+.first_section{
+    padding: 1px;
+    border: 1px solid #ff0000;
+}
+
+.second_section{
+    padding: 1px;
+    border: 1px solid #0000ff;
+}
+
+.third_section, .fourth_section{
+    padding: 1px;
+    border: 1px solid #058f12a4;
+}
+
+*/
+
+/* --------- Display flex configuration.------*/
+
+.first_section, .text_second_section, .text_third_section, .fourth_section{
+    display: flex;
+    flex-direction: column;
+}
+
+.images_first_section, .second_section, .third_section, .fourth_section ul{
+    display: flex;
+    flex-direction: row;
+}
+
+/* --------------------------------    FIRST SECTION    ---------------------------- */
+
+.first_section{
+    padding: 150px 20px 150px 20px;
+}
+
+.first_section h1, .first_section p, .first_section div{
+    margin: 10px auto 10px auto;
+}
+
+.first_section h1{
+    font-size: 35px;
+}
+
+.first_section .link_first_section{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.first_section p{
+    text-align: center;
+}
+
+.images_first_section div{
+    margin: auto 30px auto 30px;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------------   SECOND SECTION    ---------------------------- */
+
+.second_section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px 150px 50px 150px;
+}
+
+.text_second_section{
+    margin-right: 50px;
+}
+
+.text_second_section h3{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.text_second_section p{
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------------   THIRD SECTION    ---------------------------- */
+
+.third_section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px 150px 50px 150px;
+}
+
+.text_third_section{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.text_third_section h3{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.text_third_section p{
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: right;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------------   FOURTH SECTION    ---------------------------- */
+
+.fourth_section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.fourth_section h3, .fourth_section p, .fourth_section ul{
+margin: auto auto auto auto;
+}
+
+.fourth_section h3{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.fourth_section p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.fourth_section ul{
+    list-style: none;
+}
+
+.fourth_section ul li{
+    margin: auto 20px auto 20px;
+}
+
+.fourth_section ul li i{
+    color: #000000;
+    font-size: 50px;
+}
