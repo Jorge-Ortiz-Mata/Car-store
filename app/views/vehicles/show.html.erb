@@ -2,9 +2,15 @@
     <strong>ID number:</strong>
     <%= @vehicle.id %>
 </p>
+
 <p>
     <strong>Title:</strong>
     <%= @vehicle.title %>
+</p>
+
+<p>
+    <strong>Valoration:</strong>
+    <%= @rate  %>
 </p>
 
 <p>
@@ -86,9 +92,12 @@
 <!---- Section Comments. ---->
 
 <section>
-    <span>
-        Comments <%= @vehicle.comments.count %>
-    </span>
+    <h2>
+        Comments.
+    </h2>
+    <p>
+         <%= @vehicle.comments.count %> comments.
+    </p>
     <% if @vehicle.comments %>
         <% @vehicle.comments.each do |comment| %>
             <%= render comment %>
@@ -101,7 +110,7 @@
 </section>
 
 <section>
-    <h2>Add a comment.</h2>
+    <h3>Add a comment.</h3>
     <div>
         <%= render 'comments/form', comment: @comment %>
     </div>

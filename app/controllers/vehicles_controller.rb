@@ -13,7 +13,8 @@ class VehiclesController < ApplicationController
         end
     end
 
-    def show
+    def show    
+        @vehicle.reviews.any? ? @rate = Vehicle.get_valoration(@vehicle) : @rate = 0
         @comment = Comment.new
         @review = Review.new
     end

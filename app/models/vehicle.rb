@@ -36,4 +36,12 @@ class Vehicle < ApplicationRecord
         vehicle.video_thumbnail.destroy if vehicle.video_thumbnail.attached?
     end
 
+    def self.get_valoration(vehicle)
+        res = 0
+        vehicle.reviews.each do |review|
+            res = res + review.rating
+        end
+        res = res / vehicle.reviews.length
+    end
+
 end

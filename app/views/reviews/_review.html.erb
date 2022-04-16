@@ -1,5 +1,5 @@
 <p>
     <%= review.body %> <br>
     <%= review.rating %> <br>
-    <%= link_to 'Edit', edit_vehicle_review_path(review.vehicle, review.id) %>
+    <%= link_to 'Edit', edit_vehicle_review_path(review.vehicle, review.id) if current_user == review.user %>
 </p>

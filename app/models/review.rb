@@ -15,5 +15,4 @@ class Review < ApplicationRecord
         def self.ratings
             RATINGS.map {|rating| [rating, rating]}
         end
-
 end
