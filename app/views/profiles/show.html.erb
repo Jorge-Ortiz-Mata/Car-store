@@ -1,3 +1,7 @@
+<%= render 'shared/header' %>
+<%= render 'shared/notice' if notice %>
+<%= render 'shared/alert' if alert %>
+
 <p>
     <strong>First name:</strong>
     <%= @profile.first_name %>

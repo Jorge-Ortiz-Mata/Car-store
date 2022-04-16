@@ -1,3 +1,7 @@
+<%= render 'shared/header' %>
+<%= render 'shared/notice' if notice %>
+<%= render 'shared/alert' if alert %>
+
 <h1>Editing Profile</h1>
 
 <%= render 'form', profile: @profile %>

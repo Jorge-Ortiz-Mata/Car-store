@@ -1,3 +1,7 @@
+<%= render 'shared/header' %>
+<%= render 'shared/notice' if notice %>
+<%= render 'shared/alert' if alert %>
+
 <div>
     <h2>Edit review</h2>
     <%= form_with(model: [@vehicle, @review], local: true) do |form| %>

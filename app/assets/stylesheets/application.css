@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+
+*, body{
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ------------------------------------- HEADER SECTION ----------------------------  */
+
+header, header main{
+    display: flex;
+    flex-direction: column;
+}
+
+header nav, header nav ul{
+    display: flex;
+    flex-direction: row
+}
+
+header{
+    height: 950px;
+}
+
+/* ------------ Delete this sections ------------ */
+
+header, header nav ul li{
+    padding: 1px;
+    border: 1px solid #ff0000;
+}
+
+header nav{
+    padding: 1px;
+    border: 1px solid #0000ff;
+}
+
+header main{
+    padding: 1px;
+    border: 1px solid #058f12a4;
+}
+
+/* -------------------------------------------- */
+
+/* -------  Nav menu  --------*/
+
+header nav{
+    justify-content: space-between;
+    height: 50px;
+    padding: 10px;
+}
+
+header nav ul{
+    list-style: none;
+}
+
+header nav ul li{
+    margin: auto 10px auto 10px;
+}
+
+li .create_account_button, li .sign_in_button{
+    color: #ffffff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+li .logo_name{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+li .privacy_name{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+li .create_account_button{
+    background-color: #20b47b;
+
+}
+
+li .sign_in_button{
+    background-color: #2083b4;
+}
+
+/* -------  Main section  --------*/
+
+header main{
+    margin: auto auto auto auto;
+}
+
+header main h1, header main p, header main div{
+    margin: 50px auto 50px auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+header main h1{
+    font-size: 60px;
+}
+
+header main p{
+    font-size: 20px;
+}
+
+#video_background{
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 950px;
+}
+
+#see_more_button{
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 0px 0px 5px 2px #8d8d8d;
+}
+
+/* -----------------------------------------------------------------------------------  */

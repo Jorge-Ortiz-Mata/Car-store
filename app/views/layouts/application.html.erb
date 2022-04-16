@@ -12,9 +12,6 @@
     </head>
 
     <body>
-        <%= render 'shared/header' %>
-        <%= render 'shared/notice' if notice %>
-        <%= render 'shared/alert' if alert %>
         <%= yield %>
         <%= render 'shared/footer' %>
     </body>
