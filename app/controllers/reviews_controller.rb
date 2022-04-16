@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     before_action :set_review, only: [:edit, :update]
 
     def create
+        @vehicle = Vehicle.friendly.find(params[:vehicle_id])
         @review = @vehicle.reviews.build(reviews_params)
         @review.user_id = current_user.id
         @review.save
@@ -30,6 +31,6 @@ class ReviewsController < ApplicationController
         end
 
         def set_vehicle
-            @vehicle = Vehicle.friendly.find(params[:id])
+            @vehicle = Vehicle.friendly.find(params[:vehicle_id])
         end
 end

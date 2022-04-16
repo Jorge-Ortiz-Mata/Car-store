@@ -59,28 +59,31 @@
     </p>
 <% end %> <br>
 
-<% if !Review.look_up(current_user, @vehicle) %>  
+<%= button_to "Delete video and video_thumbnail",  delete_media_path(id: @vehicle.id), method: :delete if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
+<%= "You own this vehicle." if current_user == @vehicle.user %> <br>
+<%= button_to "Add to my cart", add_to_cart_path(user_id: current_user.id, vehicle_id: @vehicle.id), method: :post if current_user != @vehicle.user %>
+<%= link_to "Edit", vehicle_vehicle_wizard_index_path(@vehicle) if current_user == @vehicle.user %> <br>
+<%= link_to 'Destroy', @vehicle, method: :delete, data: { confirm: 'Are you sure?' } if @vehicle.user == current_user %>
+
+<!---- Section Reviews ---->
+
+
+<% if !Review.look_up(current_user, @vehicle) %>
     <div>
         <%= render 'reviews/form' %>
     </div>
 <% end %>
 
-<%= button_to "Delete video and video_thumbnail",  delete_media_path(id: @vehicle.id), method: :delete if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
-<%= "You own this vehicle." if current_user == @vehicle.user %> <br>
-<%= button_to "Add to my cart", add_to_cart_path(user_id: current_user.id, vehicle_id: @vehicle.id), method: :post if current_user != @vehicle.user %>
-<%= link_to "Edit", vehicle_vehicle_wizard_index_path(@vehicle) if current_user == @vehicle.user %> <br>
-<%= link_to 'Destroy', @vehicle, method: :delete, data: { confirm: 'Are you sure?' } if @vehicle.user == current_user %> <br>
-<%= link_to 'Back', root_path %> <br>
-<br>
 
 <section class="reviews">
     <h2>Reviews</h2>
-    <% @reviews.each do |review| %>
+    <% @vehicle.reviews.each do |review| %>
         <%= render 'reviews/review', review: review %>
     <% end %>
 </section>
 
-<br>
+
+<!---- Section Comments. ---->
 
 <section>
     <span>

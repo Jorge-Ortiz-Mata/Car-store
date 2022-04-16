@@ -5,9 +5,9 @@
     </div>
     <div>
         <%= form.label :rating %>
-        <%= form.number_field :rating %>
+        <%= form.select :rating, Review.ratings  %>
     </div>
     <div>
-        <%= form.submit %>
+        <%= form.submit 'Add review.' %>
     </div>
 <% end %>

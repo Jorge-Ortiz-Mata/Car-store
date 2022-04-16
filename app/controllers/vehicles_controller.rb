@@ -15,7 +15,7 @@ class VehiclesController < ApplicationController
 
     def show
         @comment = Comment.new
-        @reviews = @vehicle.reviews
+        @review = Review.new
     end
 
     def new

@@ -7,10 +7,11 @@
         </div>
         <div>
             <%= form.label :rating %>
-            <%= form.number_field :rating %>
+            <%= form.select :rating, Review.ratings  %>
         </div>
         <div>
             <%= form.submit %>
         </div>
     <% end %>
+    <%= link_to 'Back', :back %>
 </div>
