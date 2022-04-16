@@ -1,23 +1,23 @@
 <header class="header_secondary">
-    <nav>
+    <nav class="nav_secondary">
         <ul>
             <li>
                 <img src="<%= asset_path( 'Y.png' ) %>" alt="logo" width="30px">
             </li>
             <li>
-                <%= link_to "Car store", root_path, class:"" %>
+                <%= link_to "Car store", root_path, class:"logo_name" %>
             </li>
             <li>
-                <%= link_to "Privacy policy", privacy_path, class:"" %>
+                <%= link_to "Privacy policy", privacy_path, class:"privacy_page" %>
             </li>
         </ul>
         <ul>
             <% if !current_user %>
                 <li>
-                    <%= link_to "Create account", new_user_registration_path, class:"" if !current_user %>
+                    <%= link_to "Create account", new_user_registration_path, class:"create_account_button" if !current_user %>
                 </li> 
                 <li>
-                    <%= link_to "Sign in", new_user_session_path, class:"" if !current_user %>
+                    <%= link_to "Sign in", new_user_session_path, class:"sign_in_button" if !current_user %>
                 </li>
             <% else %>
                 <% if !current_user.profile.nil? %>
