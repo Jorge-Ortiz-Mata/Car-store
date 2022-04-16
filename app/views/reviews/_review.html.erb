@@ -1,13 +1,5 @@
-<div>
-    <% if Review.look_up(current_user, @vehicle) %>
-        <h4>Edit review</h4>
-        <%= link_to "Edit comment", '#', id:"add_review_button" %>
-    <% else %>
-        <h4>Add review</h4>
-        <button id="add_review_button">Add review</button>
-    <% end %>
-</div>
-
-<div id="form_section" class="hide">
-    <%= render 'reviews/form' %>
-</div>
+<p>
+    <%= review.body %> <br>
+    <%= review.rating %> <br>
+    <%= link_to 'Edit', edit_vehicle_review_path(review.vehicle, review.id) %>
+</p>

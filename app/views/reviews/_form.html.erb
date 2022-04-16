@@ -1,17 +1,13 @@
-<p>
-    <h4>Your review.</h4>
-    <button id="remove_review_button">Close</button>
-    <%= form_with model: [@vehicle, Review.new] do |form| %>
-        <div>
-            <%= form.label :body %>
-            <%= form.text_field :body %>
-        </div>
-        <div>
-            <%= form.label :rating %>
-            <%= form.number_field :rating %>
-        </div>
-        <div>
-            <%= form.submit %>
-        </div>
-    <% end %>
-</p>
+<%= form_with model: [@vehicle, Review.new] do |form| %>
+    <div>
+        <%= form.label :body %>
+        <%= form.text_field :body %>
+    </div>
+    <div>
+        <%= form.label :rating %>
+        <%= form.number_field :rating %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

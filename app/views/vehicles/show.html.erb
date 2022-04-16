@@ -57,11 +57,13 @@
             You won't be able to see the video thumbail image unless you upload a video.
         <% end %>
     </p>
-<% end %>
+<% end %> <br>
 
-<div class="reviews">
-    <%= render 'reviews/review' %>
-</div>
+<% if !Review.look_up(current_user, @vehicle) %>  
+    <div>
+        <%= render 'reviews/form' %>
+    </div>
+<% end %>
 
 <%= button_to "Delete video and video_thumbnail",  delete_media_path(id: @vehicle.id), method: :delete if @vehicle.video.attached? || @vehicle.video_thumbnail.attached? %>
 <%= "You own this vehicle." if current_user == @vehicle.user %> <br>
@@ -70,6 +72,16 @@
 <%= link_to 'Destroy', @vehicle, method: :delete, data: { confirm: 'Are you sure?' } if @vehicle.user == current_user %> <br>
 <%= link_to 'Back', root_path %> <br>
 <br>
+
+<section class="reviews">
+    <h2>Reviews</h2>
+    <% @reviews.each do |review| %>
+        <%= render 'reviews/review', review: review %>
+    <% end %>
+</section>
+
+<br>
+
 <section>
     <span>
         Comments <%= @vehicle.comments.count %>
@@ -92,4 +104,4 @@
     </div>
 </section>
 
-<%= javascript_pack_tag 'reviews_user' %>
+<%#= javascript_pack_tag 'reviews_user' %>
