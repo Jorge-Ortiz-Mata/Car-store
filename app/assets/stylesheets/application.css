@@ -22,33 +22,33 @@
 
 /* ------------------------------------- HEADER SECTION ----------------------------  */
 
-header, header main{
+.header_primary, .header_primary main{
     display: flex;
     flex-direction: column;
 }
 
-header nav, header nav ul{
+.header_primary nav, .header_primary nav ul{
     display: flex;
     flex-direction: row
 }
 
-header{
+.header_primary{
     height: 950px;
 }
 
 /* ------------ Delete this sections ------------ */
 
-header, header nav ul li{
+.header_primary, .header_primary nav ul li{
     padding: 1px;
     border: 1px solid #ff0000;
 }
 
-header nav{
+.header_primary nav{
     padding: 1px;
     border: 1px solid #0000ff;
 }
 
-header main{
+.header_primary main{
     padding: 1px;
     border: 1px solid #058f12a4;
 }
@@ -57,17 +57,17 @@ header main{
 
 /* -------  Nav menu  --------*/
 
-header nav{
+.header_primary nav{
     justify-content: space-between;
     height: 50px;
     padding: 10px;
 }
 
-header nav ul{
+.header_primary nav ul{
     list-style: none;
 }
 
-header nav ul li{
+.header_primary nav ul li{
     margin: auto 10px auto 10px;
 }
 
@@ -103,21 +103,21 @@ li .sign_in_button{
 
 /* -------  Main section  --------*/
 
-header main{
+.header_primary main{
     margin: auto auto auto auto;
 }
 
-header main h1, header main p, header main div{
+.header_primary main h1, .header_primary main p, .header_primary main div{
     margin: 50px auto 50px auto;
     text-align: center;
     color: #ffffff;
 }
 
-header main h1{
+.header_primary main h1{
     font-size: 60px;
 }
 
-header main p{
+.header_primary main p{
     font-size: 20px;
 }
 
