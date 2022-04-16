@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+    delete "cancel_account", to: "users#cancel_account"
+
     patch 'change_to_admin', to: 'roles#change_to_admin'
     patch 'change_to_member', to: 'roles#change_to_member'
     patch 'change_to_other', to: 'roles#change_to_other'

@@ -8,7 +8,7 @@
     <td><%= profile.position.name %></td>
     <td>
         <%= link_to "Show", profile %> <br>
-        <%= link_to "Cancel Account", '#' %>
+        <%= button_to "Cancel Account", cancel_account_path(profile: profile.id), data: { confirm: 'Are you sure?' }, method: :delete if profile.position.name != 'admin' %>
     </td>
     <td>
         <% if profile.position.name != 'admin' %>
