@@ -1,23 +1,57 @@
-<tr>
-    <td><%= profile.id %></td>
-    <td><%= profile.first_name %></td>
-    <td><%= profile.last_name %></td>
-    <td><%= profile.user.email %></td>
-    <td><%= profile.location %></td>
-    <td><%= profile.birth %></td>
-    <td><%= profile.position.name %></td>
-    <td>
-        <%= link_to "Show", profile %> <br>
-        <%= button_to "Cancel Account", cancel_account_path(profile: profile.id), data: { confirm: 'Are you sure?' }, method: :delete if profile.position.name != 'admin' %>
-    </td>
-    <td>
-        <% if profile.position.name != 'admin' %>
-            <%= button_to 'Admin', change_to_admin_path(profile: profile.id, position: profile.position.id), method: :patch  if profile.position.name != 'admin' %> <br>
-            <%= button_to 'Member', change_to_member_path(profile: profile.id, position: profile.position.id), method: :patch if profile.position.name != 'member' %> <br>
-            <%= button_to 'Other', change_to_other_path(profile: profile.id, position: profile.position.id), method: :patch  if profile.position.name != 'other' %>
-        <% else %>
-            <%= "This user is an admin." %>
-        <% end %>
-    </td>
-    <td><%= time_ago_in_words(profile.created_at) %></td>
-</tr>
+<div class="user_card">
+    <div class="user_image"> 
+        <%= profile.avatar.attached? ? image_tag(profile.avatar, width: 100) : image_tag("user.png", width: 100)  %>
+    </div>
+    <div class="user_info">
+        <div>
+            <p>
+                <strong>ID:</strong>
+                <%= profile.id %>
+            </p>
+            <p>
+                <strong>Name:</strong> 
+                <%= profile.first_name %> <%= profile.last_name %>
+            </p>
+            <p>
+                <strong>Email:</strong>
+                <%= profile.user.email %>
+            </p>
+            <p>
+                <strong>Joined:</strong>
+                <%= time_ago_in_words(profile.created_at) %>
+            </p>
+            <p>
+                <strong>Location: </strong>
+                <%= profile.location %>
+            </p>
+            <p>
+                <strong>Date of birth:</strong>
+                <%= profile.birth %>
+            </p>
+            <p>
+                <strong>Role:</strong>
+                <%= profile.position.name %>
+            </p>
+            <p>
+                <strong>Profile's link:</strong>
+                <%= link_to "See this user", profile %>
+            </p>
+        </div>
+        <div>
+            <div class="user_buttons_roles">
+                <% if profile.position.name != 'admin' %>
+                    <%= button_to 'Admin', change_to_admin_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_admin"  if profile.position.name != 'admin' %>
+                    <%= button_to 'Member', change_to_member_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_member" if profile.position.name != 'member' %>
+                    <%= button_to 'Other', change_to_other_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_other"  if profile.position.name != 'other' %>
+                <% else %>
+            </div>
+            <p class="role_admin">
+                <%= "This user is an admin." %>
+            </p>
+            <% end %>
+        </div>
+        <div>
+            <%= button_to "Cancel Account", cancel_account_path(profile: profile.id), data: { confirm: 'Are you sure?' }, method: :delete, class:"cancel_account_button" if profile.position.name != 'admin' %>
+        </div>
+    </div>
+</div>
