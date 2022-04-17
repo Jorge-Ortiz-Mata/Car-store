@@ -1,20 +1,9 @@
 <tr>
     <td><%= vehicle.id %></td>
     <td><%= link_to "#{vehicle.title}", vehicle %></td>
-    <td>
-        <%= vehicle.categories.first.name %>
-    </td>
-    <td><%= vehicle.description %></td>
+    <td><%= vehicle.categories.first.name %></td>
+    <td><%= vehicle.description.to_s[0..100] %>...</td>
     <td><%= vehicle.price.round(2) %></td>
     <td><%= vehicle.company %></td>
-    <% if vehicle.images.attached? %>
-        <% vehicle.images.each do |image| %>
-            <td>
-            <p><%= image_tag(image, width: 50) %></p>
-            </td>
-        <% end %>
-    <% else %>
-    <td></td>
-    <% end %>
     <td><%= vehicle.user.email %></td>
 </tr>

@@ -1,22 +1,24 @@
+
+<h2>Looking...</h2>
+
 <%= search_form_for @q do |f| %>
 
-    <%= f.label 'By title: ' %>
-    <%= f.search_field :title_cont %>
+    <%= f.label 'By title: ', class:"search_label_vehicle" %>
+    <%= f.search_field :title_cont, placeholder: "Sedan", class:"search_input_vehicle" %> <br>
 
-    <%= f.label 'By Company: ' %>
-    <%= f.search_field :company_cont %>
+    <%= f.label 'By Company: ', class:"search_label_vehicle" %>
+    <%= f.search_field :company_cont, placeholder: "Ford", class:"search_input_vehicle" %> <br>
 
-    <%= f.label 'By User: ' %>
-    <%= f.search_field :user_id_eq %>
+    <%= f.label 'By Price: ', class:"search_label_vehicle" %>
+    <%= f.search_field :price_gteq, placeholder: "0", class:"search_input_price_vehicle" %> - <%= f.search_field :price_lteq, placeholder: "1000", class:"search_input_price_vehicle" %> <br>
 
-    <%= f.label 'By Price: ' %>
-    <%= f.search_field :price_gteq %> - <%= f.search_field :price_lteq %>
+    <%= f.label 'By Seller: ', class:"search_label_vehicle" %>
+    <%= f.search_field :user_email_cont, placeholder:"user@ixw.com", class:"search_input_vehicle" %> <br>
 
-    <%= f.label 'By Seller: ' %>
-    <%= f.search_field :user_email_cont %>
-
-    <%= f.label 'By Category: ' %>
-    <%= f.select :categories_name_cont, Category.all.map { |category| category.name } %>
-        
-    <%= f.submit %>
+    <%= f.label 'By Category: ', class:"search_label_vehicle" %>
+    <%= f.select :categories_name_cont, Category.all.map { |category| category.name }, class:"search_input_vehicle" %> <br>
+    
+    <br>
+    
+    <%= f.submit class:"search_vehicles_button" %>
 <% end %>

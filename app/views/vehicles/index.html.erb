@@ -1,42 +1,51 @@
 <%= render 'shared/header' %>
 <%= render 'shared/notice' if notice %>
-<%= render 'shared/alert' if alert %>
+<%= render 'shared/alert' if alert %> <br>
 
-<%= render 'search/form' %>
+<section class="vehicles_section">
+    <div class="vehicles_form">
+        <%= render 'search/form' %>
+    </div>
 
-<h1>Vehicles</h1>
-<%= "Vehicles: #{@vehicles.count}" if !params[:q].blank? %>
-<table>
-    <thead>
-        <% if params[:q].blank? %>
-            <tr>
-                <th>ID Vehicle.</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Company</th>
-                <th>Images</th>
-                <th>Seller.</th>
-            </tr>
-        <% else %>
-            <tr>
-                <th><%= sort_link(@q, :id, 'ID') %></th>
-                <th><%= sort_link(@q, :title, 'Name') %></th>
-                <th><%= sort_link(@q, :category, 'Category') %></th>
-                <th>Description</th>
-                <th><%= sort_link(@q, :price, 'Price') %></th>
-                <th><%= sort_link(@q, :company, 'Company') %></th>
-                <th>Images</th>
-                <th>Seller</th>
-            </tr>
-        <% end %>
-    </thead>
+    <div class="result_section">
+        <h1>Vehicles</h1> <br>
+        <p>
+            <%= "Vehicles: #{@vehicles.count}" if !params[:q].blank? %>
+        </p> <br>
+        <table>
+            <thead>
+                <% if params[:q].blank? %>
+                    <tr>
+                        <th>ID Vehicle.</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th>Seller.</th>
+                    </tr>
+                <% else %>
+                    <tr>
+                        <th><%= sort_link(@q, :id, 'ID') %></th>
+                        <th><%= sort_link(@q, :title, 'Name') %></th>
+                        <th><%= sort_link(@q, :category, 'Category') %></th>
+                        <th>Description</th>
+                        <th><%= sort_link(@q, :price, 'Price') %></th>
+                        <th><%= sort_link(@q, :company, 'Company') %></th>
+                        <th>Seller</th>
+                    </tr>
+                <% end %>
+            </thead>
 
-    <tbody>
-        <% @vehicles.each do |vehicle| %>
-            <%= render vehicle %>
-        <% end %>
-    </tbody>
-    <%== pagy_nav(@pagy) %>
-</table>
+            <tbody>
+                <% @vehicles.each do |vehicle| %>
+                    <%= render vehicle %>
+                <% end %>
+            </tbody>
+        </table> <br>
+
+        <p class="pagination">
+            <%== pagy_nav(@pagy) %>
+        </p>
+    </div>
+</section>
