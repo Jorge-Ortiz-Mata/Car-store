@@ -1,16 +1,16 @@
 
-.sign_up_page{
+.sign_up_page, .sign_in_page{
     padding: 50px;
     display: flex;
     flex-direction: column;
 }
 
-.form_sign_in{
+.form_sign_in, .form_sign_up{
     margin-bottom: 50px;
     margin-top: 50px;
 }
 
-.sign_up_page h2{
+.sign_up_page h2, .sign_in_page h2{
     font-weight: 700;
     font-size: 40px;
     text-align: center;
@@ -31,7 +31,7 @@
     box-shadow: 0px 0px 3px 1px #989898;
 }
 
-.submit_sign_up{
+.submit_sign_up, .submit_sign_in{
     padding: 10px;
     background-color: #b0ffc2;
     color: #045901;
