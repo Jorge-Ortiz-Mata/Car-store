@@ -9,6 +9,8 @@
     </h2>
 
     <div class="form_sign_up">
+        <%= flash[:recaptcha_error] %>
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
             <%= f.label :email, class:"form_label" %>
@@ -27,8 +29,12 @@
                 </div>
             <% end %> <br>
 
+            <%= recaptcha_tags %>
+
+            <br>
+
             <div class="actions">
-            <%= f.submit "Log in", class:"submit_sign_in" %>
+                <%= f.submit "Log in", class:"submit_sign_in" %>
             </div>
         <% end %>
     </div>
