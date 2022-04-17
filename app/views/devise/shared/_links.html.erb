@@ -1,11 +1,3 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
-<% end %>
-
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
 <% end %>
@@ -19,13 +11,13 @@
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>
-  <%= button_to user_facebook_omniauth_authorize_path, class: 'omniauth-button facebook btn btn-info mt-5 mb-1' do %>
+  <%= button_to user_facebook_omniauth_authorize_path, class: 'omniauth-button facebook btn_facebook' do %>
     <i class="fab fa-facebook"></i> Log in with Facebook
   <% end %>
-  <%= button_to user_google_oauth2_omniauth_authorize_path, class: 'omniauth-button google btn btn-danger mt-1 mb-5' do %>
+  <%= button_to user_google_oauth2_omniauth_authorize_path, class: 'omniauth-button google btn_google' do %>
     <i class="fab fa-google"></i> Log in with Google
   <% end %>
-  <%= button_to user_github_omniauth_authorize_path, class: 'omniauth-button github btn btn-danger mt-1 mb-5' do %>
+  <%= button_to user_github_omniauth_authorize_path, class: 'omniauth-button github btn_github' do %>
     <i class="fab fa-github"></i> Log in with Github
   <% end %>
 <% end %>
