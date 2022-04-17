@@ -101,6 +101,10 @@ li .privacy_page{
     color: #450000;
 }
 
+.alert div button:hover, .notice div button:hover{
+    cursor: pointer;
+}
+
 .notice div i, .alert div i{
     font-size: 18px;
 }
