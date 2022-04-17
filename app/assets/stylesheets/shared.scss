@@ -60,6 +60,109 @@ li .privacy_page{
     }
 }
 
+li .item_secondary{
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dropdown_menu{
+    margin-left: 10px;
+}
+
+.min_menu_title_one, .min_menu_title_two{
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px;
+    border: 0px;
+}
+
+.min_menu_title_one{
+    background-color: #018511;
+}
+
+.min_menu_title_two{
+    background-color: #017c85;
+}
+
+.min_menu_title_one:hover, .min_menu_title_two:hover{
+    cursor: pointer;    
+}
+
+.min_menu_title_one:hover{
+    background-color: #00c917;
+}
+
+.min_menu_title_two:hover{
+    background-color: #00bac7;
+}
+
+.min_menu_list_one, .min_menu_list_two{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.min_menu_list_one{
+    background-color: #d6ffd9;
+}
+
+.min_menu_list_two{
+    background-color: #c4fbff;
+}
+
+.item_dropdown, .item_dropdown_two{
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.item_dropdown{
+    color: #004507;
+}
+
+.item_dropdown_two{
+    color: #004b51;
+}
+
+.show{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sign_out_button{
+    background-color: #8b0000;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;    
+    border: 0px;
+    text-decoration: none;
+}
+
+.sign_out_button:hover{
+    background-color: #bd0000;
+}
+
 /* ---------------------------- NOTICE and ALERT MESSAGES --------------------------- */
 
 .notice, .alert{

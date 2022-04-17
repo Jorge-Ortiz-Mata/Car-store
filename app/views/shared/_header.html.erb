@@ -21,37 +21,56 @@
                 </li>
             <% else %>
                 <% if !current_user.profile.nil? %>
-                    <li>
-                        <%= link_to "New vehicle", new_vehicle_path %>
-                    </li>
-                    <li>
-                        <%= link_to "Posts", posts_path %>
-                    </li>
-                    <li>
-                        <%= link_to "Send invitation", new_user_invitation_path %>
-                    </li>
-                    <li>
-                        <%= link_to "New post", new_post_path %>
-                    </li>
-                    <li>
-                        <%= link_to "#{current_user.email} - #{current_user.profile.position.name}", profile_path(current_user.profile) %>
-                    </li>
                     <% if current_user.profile.position.name.include? 'admin' %>
                         <li>
-                            <%= link_to "Users", profiles_path %>
+                            <%= link_to "Users", profiles_path, class:"item_secondary" %>
                         </li>
                     <% end %>
                     <li>
-                        <%= link_to "Account settings", edit_user_registration_path %>
+                        <%= link_to "Posts", posts_path, class:"item_secondary" %>
                     </li>
+                
                     <li>
-                        <%= link_to "My cart", profile_my_cart_path(current_user.profile) %>
+                        <%= link_to "Send invitation", new_user_invitation_path, class:"item_secondary" %>
                     </li>
+                    <div class="dropdown_menu">
+                        <button class="min_menu_title_one">
+                            Share something?
+                        </button>
+                        <div class="min_menu_list_one">
+                            <div>
+                                <%= link_to "New vehicle", new_vehicle_path, class:"item_dropdown" %>
+                            </div>
+
+                            <div>
+                                <%= link_to "New post", new_post_path, class:"item_dropdown" %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown_menu">
+                        <button class="min_menu_title_two">
+                            Profile settings
+                        </button>
+                        <div class="min_menu_list_two">
+                            <div>
+                                <%= link_to "Edit profile.", profile_path(current_user.profile), class:"item_dropdown_two" %>
+                            </div>
+                            <div>
+                                <%= link_to "Account settings", edit_user_registration_path, class:"item_dropdown_two" %>
+                            </div>
+                            <div>
+                                <%= link_to "My cart", profile_my_cart_path(current_user.profile), class:"item_dropdown_two" %>
+                            </div>
+                        </div>
+                    </div>
                 <% end %>
                 <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign_out_button" if current_user %>
                 </li>
             <% end %>
         </ul>
     </nav>
 </header>
+
+<%= javascript_pack_tag 'fixed_sec_menu' %>
+<%= javascript_pack_tag 'shared/header' %>
