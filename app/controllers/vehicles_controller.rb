@@ -39,7 +39,7 @@ class VehiclesController < ApplicationController
         @vehicle.destroy
 
         respond_to do |format|
-        format.html { redirect_to vehicles_url, notice: "Vehicle was successfully destroyed." }
+        format.html { redirect_to vehicles_url, alert: "Vehicle was successfully destroyed." }
         end
     end
 

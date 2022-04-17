@@ -59,3 +59,54 @@ li .privacy_page{
         opacity: 1;
     }
 }
+
+/* ---------------------------- NOTICE and ALERT MESSAGES --------------------------- */
+
+.notice, .alert{
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.notice{
+    color: #004507;
+    background-color: #d6ffdb;    
+}
+
+.alert{
+    color: #450000;
+    background-color: #ffd6d6;
+}
+
+.notice p, .notice div, .alert p, .alert div{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.notice div button, .alert div button{
+    border: 0px;
+    padding: 1px;
+}
+
+.notice div button{
+    background-color: #d6ffdb;
+    color: #004507;
+}
+
+.alert div button{
+    background-color: #ffd6d6;
+    color: #450000;
+}
+
+.notice div i, .alert div i{
+    font-size: 18px;
+}
+
+.hide_notice, .hide_alert{
+    display: none;
+}
+
+/* ------------------------------------------------------------------------ */

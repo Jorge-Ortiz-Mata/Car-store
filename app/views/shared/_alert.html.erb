@@ -1,3 +1,12 @@
-<p class="alert">
-    <%= alert %>
-</p>
+<div class="alert">
+    <p>
+        <%= alert %>
+    </p>
+    <div>
+        <button id="close_alert">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'alert' %>

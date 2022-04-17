@@ -1,3 +1,12 @@
-<p class="notice">
-    <%= notice %>
-</p>
+<div class="notice">
+    <p>
+        <%= notice %>
+    </p>
+    <div>
+        <button id="close_notice">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'notice' %>
