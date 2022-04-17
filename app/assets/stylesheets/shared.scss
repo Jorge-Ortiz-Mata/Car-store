@@ -133,25 +133,13 @@ li .item_secondary{
     flex-direction: column;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+li .sign_out_button{
+    color: #ffffff;
+}
 
 .sign_out_button{
     background-color: #8b0000;
     border-radius: 10px;
-    color: #ffffff;
     font-weight: 700;
     padding: 10px;
     cursor: pointer;    
@@ -160,6 +148,7 @@ li .item_secondary{
 }
 
 .sign_out_button:hover{
+    color: #ffffff;
     background-color: #bd0000;
 }
 
