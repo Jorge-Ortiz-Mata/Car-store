@@ -2,36 +2,67 @@
 <%= render 'shared/notice' if notice %>
 <%= render 'shared/alert' if alert %>
 
-<p>
-    <strong>First name:</strong>
-    <%= @profile.first_name %>
-</p>
+<section class="user_profile_card">
+    <div>
+        <%= @profile.avatar.attached? ? image_tag(@profile.avatar, width: 200, class:"user_profile_image") : image_tag("user.png", width: 200, class:"user_profile_image")  %>
+    </div>
 
-<p>
-    <strong>Last name:</strong>
-    <%= @profile.last_name %>
-</p>
-
-<% if @profile.avatar.attached? %>
     <p>
-        <%= image_tag(@profile.avatar, width: 100 ) %>
+        <strong>First name:</strong>
+        <%= @profile.first_name %>
     </p>
-<% end %>
 
-<p>
-    <strong>Birth:</strong>
-    <%= @profile.birth %>
-</p>
+    <p>
+        <strong>Last name:</strong>
+        <%= @profile.last_name %>
+    </p>
 
-<p>
-    <strong>Location:</strong>
-    <%= @profile.location %>    
-</p>
+    <p>
+        <strong>Email:</strong>
+        <%= @profile.user.email %>
+    </p>
 
-<p>
-    <strong>Positions:</strong>
-    <%= @profile.position.name %>
-</p>
+    <p>
+        <strong>Joined:</strong>
+        <%= time_ago_in_words(@profile.created_at) %>
+    </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) if @profile.user == current_user %> <br>
-<%= link_to 'Back', root_path %>
+    <p>
+        <strong>Birth:</strong>
+        <%= @profile.birth %>
+    </p>
+
+    <p>
+        <strong>Location:</strong>
+        <%= @profile.location %>    
+    </p>
+
+    <p>
+        <strong>Role:</strong>
+        <%= @profile.position.name %>
+    </p> <br>
+
+    <div>
+        <%= link_to 'Edit', edit_profile_path(@profile), class:"edit_profile_button" if @profile.user == current_user %>
+        <%= link_to 'Back', root_path, class:"back_button" %>
+    </div>
+</section>
+
+<section class="user_objects_section">
+    <div class="user_vehicles_section">
+        <h2>Vehicles.</h2>
+        <% @profile.user.vehicles.each do |vehicle| %>
+            <div class="user_objects_card">
+                <%= render 'profiles/profile_vehicle', vehicle: vehicle %>
+            </div>
+        <% end %>
+    </div>
+    <div class="user_posts_section">
+        <h2>Posts.</h2>
+        <% @profile.user.posts.each do |post| %>
+            <div class="user_objects_card">
+                <%= render 'profiles/profile_post', post: post %>
+            </div>
+        <% end %>
+    </div>
+</section>
