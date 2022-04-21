@@ -1,3 +1,40 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new_post_form{
+    box-shadow: 0px 0px 3px 1px #b2b2b2;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.new_post_form h1, .new_post_form div{
+    margin: auto auto auto auto;
+}
+
+.new_post_form h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.new_post_button{
+    display: flex;
+}
+
+.create_post_button{
+    font-weight: 700;
+    cursor: pointer;    
+    border: 0px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+    margin: 15px auto auto auto;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #01740b;
+}

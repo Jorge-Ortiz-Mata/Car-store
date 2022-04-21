@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class:"form_label" %>
+    <%= form.text_field :title, class:"field_form", required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body %>
+    <%= form.label :body, class:"form_label" %>
+    <%= form.rich_text_area :body, class:"rich_field_form", required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="new_post_button">
+    <%= form.submit class:"create_post_button" %>
   </div>
 <% end %>
