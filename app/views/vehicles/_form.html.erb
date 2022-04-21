@@ -12,61 +12,61 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <%= form.label 'Vehicle title:', class:"form_label" %>
+    <%= form.text_field :title, class:"field_form", required: true %>
+  </div> <br>
   
   <div class="field">
-    <%= form.label 'Category' %>
-    <%= form.collection_select(:category_ids, Category.all, :id, :name, { prompt: ''} ) %>
-  </div>
+    <%= form.label 'Category', class:"form_label" %>
+    <%= form.collection_select(:category_ids, Category.all, :id, :name, { prompt: ''}, class:"select_field_form" ) %>
+  </div> <br>
   
   <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
+    <%= form.label :images, class:"form_label" %>
+    <%= form.file_field :images, multiple: true, class:"field_form" %>
+  </div> <br>
 
   <% if vehicle.video.attached? %>
     <div class="field">
-      <%= form.label :video %>
-      <%= form.file_field :video, value: vehicle.video %>
+      <%= form.label :video, class:"form_label" %>
+      <%= form.file_field :video, value: vehicle.video, class:"field_form" %>
     </div>  
   <% else %>
     <div class="field">
-      <%= form.label :video %>
-      <%= form.file_field :video %>
+      <%= form.label :video, class:"form_label" %>
+      <%= form.file_field :video, class:"field_form" %>
     </div>  
-  <% end %>
+  <% end %> <br>
 
   <% if vehicle.video_thumbnail.attached? %>
     <div class="field">
-      <%= form.label :video_thumbnail %>
-      <%= form.file_field :video_thumbnail, value: vehicle.video_thumbnail %>
+      <%= form.label :video_thumbnail, class:"form_label" %>
+      <%= form.file_field :video_thumbnail, value: vehicle.video_thumbnail, class:"field_form" %>
     </div> 
   <% else %>
     <div class="field">
-      <%= form.label :video_thumbnail %>
-      <%= form.file_field :video_thumbnail %>
+      <%= form.label :video_thumbnail, class:"form_label" %>
+      <%= form.file_field :video_thumbnail, class:"field_form" %>
     </div>  
-  <% end %>
+  <% end %> <br>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.rich_text_area :description %>
-  </div>
+    <%= form.label :description, class:"form_label" %>
+    <%= form.rich_text_area :description, class:"rich_field_form" %>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
+    <%= form.label :price, class:"form_label" %>
+    <%= form.text_field :price, class:"field_form", required: true %>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
+    <%= form.label :company, class:"form_label" %>
+    <%= form.text_field :company, class:"field_form", required: true %>
+  </div> <br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="new_vehicle_button">
+    <%= form.submit class:"create_vehicle_button" %>
+  </div> <br>
 
 <% end %>

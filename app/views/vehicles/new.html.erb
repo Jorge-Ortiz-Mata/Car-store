@@ -2,8 +2,14 @@
 <%= render 'shared/notice' if notice %>
 <%= render 'shared/alert' if alert %>
 
-<h1>New Vehicle</h1>
-
-<%= render 'form', vehicle: @vehicle %>
-
-<%= link_to 'Back', root_path %>
+<section class="new_vehicle_form">
+    <h1>
+        New Vehicle
+    </h1>
+    <div>
+        <%= render 'form', vehicle: @vehicle %>
+    </div>
+    <div>
+        <%= link_to 'Back', :back, class:"go_back_button" %>
+    </div>
+</section>

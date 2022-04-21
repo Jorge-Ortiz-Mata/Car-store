@@ -31,6 +31,23 @@
     box-shadow: 0px 0px 3px 1px #989898;
 }
 
+.select_field_form, .rich_field_form{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px #989898;
+}
+
+.select_field_form{
+    height: 50px;
+}
+
+.rich_field_form{
+    height: 300px;
+}
+
 .submit_sign_up, .submit_sign_in{
     padding: 10px;
     background-color: #b0ffc2;

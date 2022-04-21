@@ -109,3 +109,56 @@
     font-weight: 700;
     text-decoration: none;
 }
+
+ /* ------ Vehicle form section ---------- */
+
+.new_vehicle_form{
+    box-shadow: 0px 0px 3px 1px #b2b2b2;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.new_vehicle_form h1, .new_vehicle_form div{
+    margin: auto auto auto auto;
+}
+
+.new_vehicle_form h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.new_vehicle_button{
+    display: flex;
+}
+
+div .go_back_button, .create_vehicle_button{
+    font-weight: 700;
+    cursor: pointer;    
+    border: 0px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.create_vehicle_button{
+    margin: 15px auto auto auto;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #01740b;
+}
+
+div .go_back_button{
+    background-color: #007d8b;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    padding: 10px;
+
+}
