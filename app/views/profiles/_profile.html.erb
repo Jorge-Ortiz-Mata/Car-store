@@ -38,13 +38,13 @@
             </p>
         </div>
         <div>
-            <div class="user_buttons_roles">
-                <% if profile.position.name != 'admin' %>
+            <% if profile.position.name != 'admin' %>
+                <div class="user_buttons_roles">
                     <%= button_to 'Admin', change_to_admin_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_admin"  if profile.position.name != 'admin' %>
                     <%= button_to 'Member', change_to_member_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_member" if profile.position.name != 'member' %>
                     <%= button_to 'Other', change_to_other_path(profile: profile.id, position: profile.position.id), method: :patch, class:"button_change_to_other"  if profile.position.name != 'other' %>
-                <% else %>
-            </div>
+                </div>
+            <% else %>
             <p class="role_admin">
                 <%= "This user is an admin." %>
             </p>

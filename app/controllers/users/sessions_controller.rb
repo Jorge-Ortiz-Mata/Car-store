@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 
-  prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
+  #prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
 
 
     def after_sign_out_path_for(_resource_or_scope)
